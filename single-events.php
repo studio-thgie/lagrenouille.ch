@@ -17,6 +17,12 @@
                     <p><?php the_field('subtitle'); ?></p>
                 </header>
 
+                <div class="g-production__meta">
+                    <?php if ( get_field('age') ) : ?>
+                        <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
+                    <?php endif; ?>
+                </div>
+
                 <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="g-production__impression">       
                         <?php the_post_thumbnail( 'event-header', array( 'class'  => 'g-production__image' ) ); ?>

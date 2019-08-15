@@ -30,6 +30,9 @@
 
                     <article class="g-production-preview even" data-effect="random-padding">
                         <div class="g-production-preview__article">
+                            <?php if ( get_field('age') ) : ?>
+                                <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
+                            <?php endif; ?>
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <div class="g-production-preview__image">
                                     <?php the_post_thumbnail( 'event-preview', array( 'class'  => 'g-production__image' ) ); ?>
