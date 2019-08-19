@@ -10,8 +10,19 @@
 
 ?>
 
+<style>
+    .g-logo {
+        max-width: 800px;
+    }
+</style>
+
         <main>
-            <a href="spielplan.html" class="g-link--large" data-effect="random-rotate">Nächste Produktionen</a>
+
+            <?php if(get_field('link_top')): ?>
+            <a href="<?php the_field('link_top'); ?>" class="g-link--large" data-effect="random-rotate">
+                <?php the_field('link_top_label'); ?>
+            </a>
+            <?php endif; ?>
 
             <section aria-label="Vorschau der nächsten Produktionen" class="g-production-preview__wrapper">
 
@@ -40,7 +51,7 @@
                             <?php endif; ?>
                             <h2><?php the_title(); ?></h2>
                             <p class="g-production-preview__lead"><?php the_field('subtitle'); ?></p>
-                            <p><a href="<?php the_permalink(); ?>" class="g-link--cta">Ansehen</a></p>
+                            <p><a href="<?php the_permalink(); ?>" class="g-link--cta"><?php _e('view', 'grenouille'); ?></a></p>
                         </div>
                     </article>
 
@@ -48,7 +59,11 @@
 
             </section>
 
-            <a href="spielplan.html" class="g-link--large" data-effect="random-rotate">Kompletter Spielplan</a>
+            <?php if(get_field('link_bottom')): ?>
+            <a href="<?php the_field('link_bottom'); ?>" class="g-link--large" data-effect="random-rotate">
+                <?php the_field('link_bottom_label'); ?>
+            </a>
+            <?php endif; ?>
         </main>
 
 <?php get_footer(); ?>

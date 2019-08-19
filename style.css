@@ -81,8 +81,8 @@ figcaption {
 */
 
 [data-effect] {
-    -webkit-transition: 0.75s;
-    transition: 0.75s;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
 }
 
 
@@ -104,14 +104,10 @@ figcaption {
 .g-logo {
     display: block;
     position: relative;
-    max-width: 800px;
+    max-width: 300px;
 
     margin: 9rem auto 6.875rem;
     z-index: 50;
-}
-
-.g-logo--small {
-    max-width: 330px;
 }
 
 .g-logo img {
@@ -120,9 +116,10 @@ figcaption {
 }
 
 .g-header__cta {
-    position: absolute;
+    position: fixed;
     top: 170px;
-    left: 20px;
+    left: 50px;
+    z-index: 9999;
 }
 
 .g-logo--row {
@@ -186,6 +183,46 @@ figcaption {
     text-decoration: none;
 }
 
+/*language change */
+.g-lang-change {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.g-lang-change__item {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid #EA5060;
+    text-align: center;
+
+    -webkit-transition: 0.25s;
+
+    transition: 0.25s;
+}
+
+.g-lang-change__item:hover,
+.g-lang-change__item--active {
+    background: #EA5060;
+}
+
+.g-lang-change__item a {
+    display: inline-block;
+    width: 100%;
+}
+
+.g-lang-change__item:hover a,
+.g-lang-change__item--active a {
+    color: #fff;
+    text-decoration: none !important;
+}
+
 /* production preview */
 .g-production-preview__wrapper {
     width: 100%;
@@ -245,19 +282,51 @@ figcaption {
     align-items: flex-end;
 }
 
+.g-production__impression,
+.g-production-preview__image {
+    position: relative;
+    background-color: #ffffff;
+}
+
+.g-production__impression:before,
+.g-production-preview__image:before {
+    background-color: #ea5060;
+    bottom: 0;
+    content: '';
+    height: 100%;
+    left: 0;
+    mix-blend-mode: lighten;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.g-production__impression img,
 .g-production-preview__article img {
+    position: relative;
     width: 100%;
 
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%) contrast(1);
+    filter: grayscale(100%) contrast(1);
+    mix-blend-mode: multiply;
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: 0.75;
 
     -webkit-transition: 0.25s;
     transition: 0.25s;
 }
 
+.g-production-preview__article:hover .g-production-preview__image:before {
+    content: none;
+}
+
 .g-production-preview__article:hover img {
-    -webkit-filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg);
-    filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg);
+    -webkit-filter: none;
+            filter: none;
+    mix-blend-mode: unset;
 }
 
 .g-production-preview__article p,
@@ -291,8 +360,8 @@ figcaption {
 .g-production__image {
     max-width: 100%;
     height: auto;
-    -webkit-filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg);
-    filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg);
+    /* -webkit-filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg);
+    filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(290deg); */
 }
 
 .g-production__description {
@@ -389,18 +458,18 @@ figcaption {
 }
 
 .g-info__list-item__body {
-    max-height: 0;
+    max-height: 2000px;
     overflow: hidden;
 
     padding: 0 20px;
 
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .g-info__list-item--unfolded .g-info__list-item__body {
     padding: 20px;
-    max-height: 1000px;
+    max-height: 2000px;
 }
 
 /* production meta infos */
@@ -428,7 +497,7 @@ figcaption {
     right: 20px;
     -webkit-transform: translateY(-50%) rotate(12deg);
     transform: translateY(-50%) rotate(12deg);
-    z-index: 1;
+    z-index: 10;
 }
 
 .g-production-preview__list-item .g-production__meta-age {
@@ -600,6 +669,10 @@ footer {
     .g-nav.g-nav--unfolded li a {
         opacity: 1;
     }
+
+    .g-info__list-item__body {
+        max-height: 0;
+    }
 }
 
 /* typo only */
@@ -626,7 +699,7 @@ h2 {
 .g-info__list-item h2 {
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 0.25em;
+    padding-top: 0.75em;
     padding-bottom: 0.25em;
 }
 

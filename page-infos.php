@@ -11,46 +11,23 @@
 ?>
 
         <main class="g-info__list">
-            
-            <article class="g-info__list-item">
-                <header>
-                    <h2>Kontakt</h2>
-                </header>
-                <section class="g-info__list-item__body">
-                    <p>Théâtre de la Grenouille<br>
-                    Gurzelenstrasse 11<br>
-                    2502 Biel/Bienne</p>
 
-                    <p>Tel. <a href="tel:0323415586">032 341 55 86</a><br>
-                    <a href="mailto:info@theatredelagrenouille.ch">info@theatredelagrenouille.ch</a></p>
+        <?php if( have_rows('row') ): ?>
 
-                    <p>Unsere Vorstellungen werden <br>
-                    meistens im Rennweg 26 gespielt</p>
+            <?php while( have_rows('row') ): the_row(); ?>
 
-                    <p>Rennweg 26<br>
-                    2504 Biel/Bienne</p>
-                </section>
-            </article>
-            
-            <article class="g-info__list-item">
-                <header>
-                    <h2>Kontakt</h2>
-                </header>
-                <section class="g-info__list-item__body">
-                    <p>Théâtre de la Grenouille<br>
-                    Gurzelenstrasse 11<br>
-                    2502 Biel/Bienne</p>
+                <article class="g-info__list-item">
+                    <header>
+                        <h2><?php the_sub_field('title'); ?></h2>
+                    </header>
+                    <section class="g-info__list-item__body">
+                        <?php the_sub_field('text'); ?>
+                    </section>
+                </article>
 
-                    <p>Tel. <a href="tel:0323415586">032 341 55 86</a><br>
-                    <a href="mailto:info@theatredelagrenouille.ch">info@theatredelagrenouille.ch</a></p>
+            <?php endwhile; ?>
 
-                    <p>Unsere Vorstellungen werden <br>
-                    meistens im Rennweg 26 gespielt</p>
-
-                    <p>Rennweg 26<br>
-                    2504 Biel/Bienne</p>
-                </section>
-            </article>
+        <?php endif; ?>
 
         </main>
 

@@ -52,6 +52,7 @@
                         <?php endif; ?>
                         <h2><?php the_title(); ?></h2>
                         <p><?php the_field('subtitle'); ?></p>
+                        <p><a href="<?php the_permalink(); ?>" class="g-link--cta"><?php _e('view', 'grenouille'); ?></a></p>
                     </header>
                     <aside>
                         <div class="g-production-preview__list-item__address">
