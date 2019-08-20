@@ -25,7 +25,9 @@
 
                 <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="g-production__impression">       
-                        <?php the_post_thumbnail( 'event-header', array( 'class'  => 'g-production__image' ) ); ?>
+                        <div class="g-production__image-wrapper">
+                            <?php the_post_thumbnail( 'event-header', array( 'class'  => 'g-production__image' ) ); ?>
+                        </div>
                         <?php if (get_post( get_post_thumbnail_id() )->post_excerpt) : ?>
                             <figcaption>
                                 <?php echo wp_kses_post(get_post( get_post_thumbnail_id() )->post_excerpt ); ?>

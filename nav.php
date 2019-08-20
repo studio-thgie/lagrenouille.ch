@@ -8,7 +8,8 @@
         <?php wp_nav_menu('main'); ?>
     </nav>
     <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
-        <img src="<?php echo get_theme_file_uri( 'assets/img/logo.svg' ); ?>" alt="Grenouille Logo">
+        <img src="<?php echo get_theme_file_uri( 'assets/img/logo.svg' ); ?>" alt="Grenouille Logo" class="g-logo__image">
+        <img src="<?php echo get_theme_file_uri( 'assets/img/logo_white.svg' ); ?>" alt="Alternatives Grenouille Logo" class="g-logo__image--alt">
     </a>
     <?php if ( get_field('cta_link') ) : ?><a href="<?php the_field('cta_link') ?>" aria-label="<?php the_field('cta_label') ?>" class="g-header__cta"><?php endif; ?>
         <?php if ( get_field('cta_grafic') ) : ?>

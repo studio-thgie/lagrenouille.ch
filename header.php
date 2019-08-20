@@ -31,6 +31,8 @@
     <meta name="theme-color" content="#c7ffc7"> -->
 
     <?php wp_head(); ?> 
+
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri( 'assets/colors/'.rand(0,3).'.css' ); ?>">
 </head>
 
 <body>

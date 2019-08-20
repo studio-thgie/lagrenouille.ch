@@ -1,0 +1,32 @@
+body {
+    background-color: #EA5060;
+    color: #ffffff;
+}
+
+h1,
+h2,
+a,
+.g-production-preview__article:hover p {
+    color: #ffffff;
+}
+
+.g-production-preview__article:hover h2,
+.g-production-preview__article p,
+h3 {
+    color: #4F3244;
+}
+
+a.g-link--cta,
+.g-lang-change__item {
+    border-color: #4F3244;
+}
+.g-lang-change__item--active {
+    background-color: #4F3244;
+}
+
+.g-logo__image {
+    display: none;
+}
+.g-logo__image--alt {
+    display: inline-block;
+}
