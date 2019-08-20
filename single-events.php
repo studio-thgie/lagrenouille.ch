@@ -17,11 +17,34 @@
                     <p><?php the_field('subtitle'); ?></p>
                 </header>
 
-                <div class="g-production__meta">
+                <aside class="g-production__meta-wrapper">
+                    <?php if ( get_field('duration') ) : ?>
+                        <span class="g-production__meta-duration" aria-label="Minimum Alter">
+                            <img src="<?php echo get_theme_file_uri( 'assets/img/time.svg' ); ?>" alt="Dekorative Zeituhr"/>
+                            <?php the_field('duration'); ?>'
+                        </span>
+                    <?php endif; ?>
+                    <?php
+
+                        $lang = get_field('language');
+                        $both_lang = '';
+
+                        if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
+                            $both_lang = 'g-production__meta_lang--both';
+                        }
+
+                    ?>
+
+                    <?php if( in_array( 'fr', $lang ) !== false) : ?>
+                        <img class="g-production__meta_lang--fr <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/fr.svg' ); ?>" alt="Produktion in Französisch"/>
+                    <?php endif; ?>
+                    <?php if( in_array( 'de', $lang ) !== false) : ?>
+                        <img class="g-production__meta_lang--de <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/de.svg' ); ?>" alt="Produktion in Deutsch"/>
+                    <?php endif; ?>
                     <?php if ( get_field('age') ) : ?>
                         <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
                     <?php endif; ?>
-                </div>
+                </aside>
 
                 <?php if ( has_post_thumbnail() ) : ?>
                     <figure class="g-production__impression">       
@@ -45,5 +68,21 @@
             </article>
             
         </main>
+
+        <?php
+
+            /* for($l = 1; $l <= 2; $l++){
+                if(rand(1, 100) > 75){
+                    echo '<span class="g-shape--left"><img data-effect="parallax" src="'.get_theme_file_uri( 'assets/img/shapes/l_0'.rand(1, 2).'.svg' ).'"></span>';
+                }
+            }
+
+            for($r = 1; $r <= 2; $r++){
+                if(rand(1, 100) > 75){
+                    echo '<span class="g-shape--right"><img data-effect="parallax" src="'.get_theme_file_uri( 'assets/img/shapes/r_0'.rand(1,4).'.svg' ).'"></span>';
+                }
+            } */
+
+        ?>
 
 <?php get_footer(); ?>

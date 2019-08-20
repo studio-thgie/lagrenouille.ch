@@ -20,7 +20,13 @@ setTimeout(() => {
                 let padding = 1 + Math.random() * 10;
                 el.style.padding = padding+'em';
                 break;
-        
+            case 'parallax':
+                el.parentNode.style.top = Math.random() * (document.body.offsetHeight - el.outerHeight) + 'px';
+                new simpleParallax(el, {
+                    'scale': 1.5,
+                    'delay': 0
+                });
+                break;
             default:
                 break;
         }

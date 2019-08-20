@@ -54,6 +54,10 @@ html {
     font-size: 100%;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -330,7 +334,7 @@ figcaption {
 
 .g-production-preview__article:hover img {
     -webkit-filter: none;
-            filter: none;
+    filter: none;
     mix-blend-mode: unset;
 }
 
@@ -478,6 +482,16 @@ figcaption {
 }
 
 /* production meta infos */
+.g-production__meta-wrapper {
+    text-align: right;
+    position: absolute;
+    width: calc(100% - 20px);
+    left: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    z-index: 10;
+}
+
 .g-production__meta-age {
     display: inline-block;
 
@@ -513,6 +527,12 @@ figcaption {
     z-index: 1;
 }
 
+.g-production__meta-wrapper .g-production__meta-age {
+    -webkit-transform: translateY(50%) rotate(12deg);
+    transform: translateY(50%) rotate(12deg);
+    z-index: 10;
+}
+
 .g-production-preview__list-item .g-production__meta_lang--de,
 .g-production-preview__list-item .g-production__meta_lang--fr {
     position: absolute;
@@ -531,6 +551,18 @@ figcaption {
     transform: translate(160%, 30%) rotate(25deg);
 }
 
+.g-production__meta-wrapper .g-production__meta_lang--de {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+
+.g-production__meta-wrapper .g-production__meta_lang--fr {
+    -webkit-transform: rotate(-46deg) translate(45px, 5px);
+    ;
+    transform: rotate(-46deg) translate(45px, 5px);
+    ;
+}
+
 .g-production__meta-duration {
     font-size: 3.5em;
     text-align: center;
@@ -539,6 +571,30 @@ figcaption {
 .g-production__meta-duration img {
     -webkit-transform: translateY(25%);
     transform: translateY(25%);
+}
+
+/* shapes */
+.g-shape--left .simpleParallax,
+.g-shape--right .simpleParallax {
+    overflow: visible !important;
+}
+
+.g-shape--left {
+
+    position: absolute;
+    left: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+
+}
+
+.g-shape--right {
+
+    position: absolute;
+    right: 0;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+
 }
 
 footer {
@@ -781,6 +837,7 @@ a.g-link--cta:hover {
 
 figcaption {
     font-size: 1.25em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
