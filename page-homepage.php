@@ -10,11 +10,11 @@
 
 ?>
 
-<style>
-    .g-logo {
-        max-width: 800px;
-    }
-</style>
+        <style>
+            .g-logo img {
+                max-width: 800px;
+            }
+        </style>
 
         <main>
 

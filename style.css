@@ -105,16 +105,40 @@ figcaption {
     position: relative;
 }
 
+.g-logo-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 80%;
+    margin: 0 auto;
+}
+
+.g-logo-wrapper>* {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 50%;
+    flex: 1 50%;
+}
+
 .g-logo {
     display: block;
     position: relative;
-    max-width: 300px;
+    text-align: center;
 
     margin: 9rem auto 6.875rem;
     z-index: 50;
 }
 
 .g-logo img {
+    max-width: 300px;
     width: 100%;
     height: auto;
 }
@@ -203,16 +227,21 @@ figcaption {
 
 .g-lang-change__item {
     display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     border-radius: 50%;
     border: 1px solid #EA5060;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
 
     -webkit-transition: 0.25s;
-
     transition: 0.25s;
+}
+
+.g-lang-change__item+.g-lang-change__item {
+    margin-left: 5px;
 }
 
 .g-lang-change__item:hover,
@@ -223,12 +252,12 @@ figcaption {
 .g-lang-change__item a {
     display: inline-block;
     width: 100%;
+    text-decoration: none !important;
 }
 
 .g-lang-change__item:hover a,
 .g-lang-change__item--active a {
     color: #fff;
-    text-decoration: none !important;
 }
 
 /* production preview */
@@ -376,6 +405,8 @@ figcaption {
 .g-production__description {
     -webkit-column-count: 2;
     column-count: 2;
+    -webkit-column-gap: 50px;
+    column-gap: 50px;
 }
 
 /* production list */
@@ -584,7 +615,7 @@ figcaption {
     position: absolute;
     left: 0;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
 
 }
 
@@ -593,7 +624,7 @@ figcaption {
     position: absolute;
     right: 0;
     -webkit-transform: translateX(50%);
-            transform: translateX(50%);
+    transform: translateX(50%);
 
 }
 
@@ -807,12 +838,13 @@ a:not([class]) {
     text-decoration: underline;
 }
 
-a.g-link--large {
+.g-link--large {
     display: block;
     max-width: 600px;
     margin: 0 auto;
 
     font-size: 5em;
+    font-weight: 700;
     text-align: center;
     text-decoration: underline;
     text-transform: uppercase;

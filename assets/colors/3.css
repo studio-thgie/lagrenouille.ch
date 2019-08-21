@@ -20,6 +20,7 @@ a.g-link--cta,
 .g-lang-change__item {
     border-color: #4F3244;
 }
+.g-lang-change__item:hover,
 .g-lang-change__item--active {
     background-color: #4F3244;
 }
