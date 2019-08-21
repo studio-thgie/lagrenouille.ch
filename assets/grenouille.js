@@ -21,9 +21,8 @@ setTimeout(() => {
                 el.style.padding = padding+'em';
                 break;
             case 'parallax':
-                el.parentNode.style.top = Math.random() * (document.body.offsetHeight - el.outerHeight) + 'px';
                 new simpleParallax(el, {
-                    'scale': 1.5,
+                    'scale': 2.5,
                     'delay': 0
                 });
                 break;
@@ -37,6 +36,13 @@ function random_rotation(el, min, max) {
     let rotation = -15 + Math.round(Math.random() * 30);
     el.style.transform = 'rotate('+rotation+'deg)';
 }
+
+document.querySelectorAll('.g-shape--left').forEach(el => {
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight) + 'px';
+});
+document.querySelectorAll('.g-shape--right').forEach(el => {
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight) + 'px';
+});
 
 /* info ui */
 document.addEventListener('click', function (evt) {

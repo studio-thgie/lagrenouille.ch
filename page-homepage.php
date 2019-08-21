@@ -66,4 +66,6 @@
             <?php endif; ?>
         </main>
 
+        <?php get_template_part( 'shapes' ); ?>
+
 <?php get_footer(); ?>
