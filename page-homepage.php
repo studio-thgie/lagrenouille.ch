@@ -11,8 +11,8 @@
 ?>
 
         <style>
-            .g-logo img {
-                max-width: 800px;
+            .g-logo span {
+                width: 800px;
             }
         </style>
 

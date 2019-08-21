@@ -9,8 +9,10 @@
     </nav>
     <div class="g-logo-wrapper">
         <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
-            <img src="<?php echo get_theme_file_uri( 'assets/img/logo.svg' ); ?>" alt="Grenouille Logo" class="g-logo__image">
-            <img src="<?php echo get_theme_file_uri( 'assets/img/logo_white.svg' ); ?>" alt="Alternatives Grenouille Logo" class="g-logo__image--alt">
+            <span alt="Grenouille Logo" class="g-logo__image" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/logo.json' ); ?>" data-loop="false"></span>
+            <span alt="Alternatives Grenouille Logo" class="g-logo__image--alt" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/logo.json' ); ?>" data-loop="false"></span>
+            <!-- <img src="<?php echo get_theme_file_uri( 'assets/img/logo.svg' ); ?>" alt="Grenouille Logo" class="g-logo__image"> -->
+            <!-- <img src="<?php echo get_theme_file_uri( 'assets/img/logo_white.svg' ); ?>" alt="Alternatives Grenouille Logo" class="g-logo__image--alt"> -->
         </a>
         <?php if(!is_page_template('page-homepage.php')): ?>
             <h1 class="g-link--large" data-effect="random-rotate"><?php the_title(); ?></h1>

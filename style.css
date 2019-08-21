@@ -133,18 +133,18 @@ figcaption {
     position: relative;
     text-align: center;
 
-    margin: 9rem auto 6.875rem;
+    margin: 6rem auto 6.875rem;
     z-index: 50;
 }
 
-.g-logo img {
-    max-width: 300px;
-    width: 100%;
+.g-logo span {
+    display: inline-block;
+    width: 300px;
     height: auto;
 }
 
 .g-logo__image--alt {
-    display: none;
+    display: none !important;
 }
 
 .g-header__cta {
@@ -599,9 +599,11 @@ figcaption {
     text-align: center;
 }
 
-.g-production__meta-duration img {
+.g-production__meta-duration span {
+    display: inline-block;
     -webkit-transform: translateY(25%);
     transform: translateY(25%);
+    width: 120px;
 }
 
 /* shapes */

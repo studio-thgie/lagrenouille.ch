@@ -26,6 +26,15 @@ setTimeout(() => {
                     'delay': 0
                 });
                 break;
+            case 'animation':
+                var animation = bodymovin.loadAnimation({
+                    container: el,
+                    renderer: 'svg',
+                    loop: el.dataset.loop,
+                    autoplay: true,
+                    path: el.dataset.animation
+                })
+                break;
             default:
                 break;
         }

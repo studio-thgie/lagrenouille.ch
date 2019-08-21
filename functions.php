@@ -36,6 +36,7 @@
             wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/normalize.css', array(), '8.0.1', 'all');
             wp_enqueue_style( 'style', get_stylesheet_uri() );
             wp_enqueue_script( 'simpleParallax', get_template_directory_uri() . '/assets/simpleParallax.min.js', array(), '5.1.0', true);
+            wp_enqueue_script( 'lottie', get_template_directory_uri() . '/assets/lottie.min.js', array(), '5.5.7', true);
             wp_enqueue_script( 'grenouille', get_template_directory_uri() . '/assets/grenouille.js', array(), '1.0', true); 
         }
     endif;
