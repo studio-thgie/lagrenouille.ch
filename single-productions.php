@@ -20,7 +20,7 @@
                 <aside class="g-production__meta-wrapper">
                     <?php if ( get_field('duration') ) : ?>
                         <span class="g-production__meta-duration" aria-label="Minimum Alter">
-                            <img src="<?php echo get_theme_file_uri( 'assets/img/time.svg' ); ?>" alt="Dekorative Zeituhr"/>
+                            <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/time.json' ); ?>" data-loop="true"></span>
                             <?php the_field('duration'); ?>'
                         </span>
                     <?php endif; ?>

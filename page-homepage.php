@@ -28,18 +28,15 @@
 
             <?php
                 $loop = new WP_Query( array(
-                    'post_type' => 'Events',
+                    'post_type' => 'Productions',
                     'posts_per_page' => -1,
-                    'meta_key'	=> 'start_date',
-                    'orderby'	=> 'meta_value_num',
-                    'order'		=> 'ASC'
                     )
                 );
             ?>
 
-                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); $count++; ?>
 
-                    <article class="g-production-preview even" data-effect="random-padding">
+                    <article class="g-production-preview <?php echo ($count % 2 ? 'even' : 'odd');?>" data-effect="random-padding">
                         <div class="g-production-preview__article">
                             <?php if ( get_field('age') ) : ?>
                                 <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>

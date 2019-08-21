@@ -14,8 +14,14 @@
             <!-- <img src="<?php echo get_theme_file_uri( 'assets/img/logo.svg' ); ?>" alt="Grenouille Logo" class="g-logo__image"> -->
             <!-- <img src="<?php echo get_theme_file_uri( 'assets/img/logo_white.svg' ); ?>" alt="Alternatives Grenouille Logo" class="g-logo__image--alt"> -->
         </a>
-        <?php if(!is_page_template('page-homepage.php')): ?>
+        <?php if(!is_page_template('page-homepage.php') && !is_page() && get_post_type() != 'productions'): ?>
             <h1 class="g-link--large" data-effect="random-rotate"><?php the_title(); ?></h1>
+        <?php endif; ?>
+        <?php if(!is_page_template('page-homepage.php') && !is_page() && get_post_type() == 'productions'): ?>
+            <div></div>
+        <?php endif; ?>
+        <?php if(!is_page_template('page-homepage.php') && is_page() && get_post_type() != 'productions'): ?>
+            <h1 class="g-link--large" data-effect="random-rotate">La Grenouille</h1>
         <?php endif; ?>
     </div> 
     <?php if ( get_field('cta_link') ) : ?><a href="<?php the_field('cta_link') ?>" aria-label="<?php the_field('cta_label') ?>" class="g-header__cta"><?php endif; ?>
