@@ -625,6 +625,10 @@ figcaption {
     -webkit-transform: translate(160%, 40%) rotate(25deg);
     transform: translate(160%, 40%) rotate(25deg);
 }
+.g-production__meta-wrapper .g-production__meta_lang--de,
+.g-production__meta-wrapper .g-production__meta_lang--fr {
+    width: 160px;
+}
 
 .g-production__meta-wrapper .g-production__meta_lang--de {
     -webkit-transform: rotate(-15deg);
@@ -641,6 +645,8 @@ figcaption {
 .g-production__meta-duration {
     font-size: 3.5em;
     text-align: center;
+    position: relative;
+    top: -15px;
 }
 
 .g-production__meta-duration span {
@@ -943,7 +949,6 @@ p.g-production-preview__lead {
 .g-production__article header p,
 .g-production-subtitle {
     font-weight: bold;
-    color: #EA5060;
 }
 
 a {

@@ -20,7 +20,7 @@
                 <aside class="g-production__meta-wrapper">
                     <?php if ( get_field('duration') ) : ?>
                         <span class="g-production__meta-duration" aria-label="Minimum Alter">
-                            <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/GRE_SANDUHR_'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="true"></span>
+                            <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/GRE_SANDUHR_'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="1"></span>
                             <?php the_field('duration'); ?>'
                         </span>
                     <?php endif; ?>
