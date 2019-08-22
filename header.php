@@ -30,9 +30,15 @@
     <meta name="msapplication-config" content="/themes/grenouille/icons/browserconfig.xml">
     <meta name="theme-color" content="#c7ffc7"> -->
 
-    <?php wp_head(); ?> 
+    <?php wp_head(); ?>
 
-    <link rel="stylesheet" href="<?php echo get_theme_file_uri( 'assets/colors/'.rand(0,3).'.css' ); ?>">
+    <?php
+
+        $GLOBALS['color_scheme'] = array_rand(['R', 'G', 'V']); 
+
+    ?>
+
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri( 'assets/colors/'.$GLOBALS['color_scheme'].'.css' ); ?>">
 </head>
 
 <body>

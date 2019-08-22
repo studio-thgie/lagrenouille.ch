@@ -1,14 +1,13 @@
 body {
-    background-color: #4F3244;
+    background-color: #DDDE41;
     color: #ffffff;
-}
+} 
 
 h1,
 h2,
 a,
-a.g-link--cta,
 .g-production-preview__article:hover p {
-    color: #ffffff;
+    color: #4F3244;
 }
 
 .g-logo__image {

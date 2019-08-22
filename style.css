@@ -13,37 +13,37 @@
 /* webfonts */
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-Regular.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-Regular.woff);
 }
 
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-RegularItalic.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-RegularItalic.woff);
     font-style: italic
 }
 
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-Light.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-Light.woff);
     font-weight: 100;
 }
 
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-LightItalic.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-LightItalic.woff);
     font-weight: 100;
     font-style: italic
 }
 
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-Bold.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-Bold.woff);
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'beausite-classic';
-    src: url(/assets/fonts/BeausiteClassicWeb-BoldItalic.woff);
+    src: url(assets/fonts/BeausiteClassicWeb-BoldItalic.woff);
     font-weight: bold;
     font-style: italic
 }
@@ -168,24 +168,54 @@ figcaption {
     text-align: center;
 }
 
-.g-nav ul {
+.g-nav ul.menu {
     margin: 0;
     padding: 0;
     font-size: 1.8em;
     margin-top: 3.75rem;
 }
+.g-nav ul.sub-menu {
+    display: none;
+    position: absolute;
+
+    top: 35px;
+    left: -20px;
+    width: 300px;
+    text-align: left;
+    padding: 20px 40px 40px 20px;
+
+    list-style: none;
+    background-image: url(assets/img/submenu_background.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    font-size: 0.7em;
+    line-height: 1.6;
+
+    z-index: 1000;
+}
+
+.g-nav ul.menu > li:hover ul.sub-menu {
+    display: inline-block;
+}
 
 .g-nav li {
     position: relative;
     top: 0;
-    display: inline-block;
 
     -webkit-transition: 0.25s;
     transition: 0.25s;
 }
 
-.g-nav li+li {
+.g-nav ul.menu > li+li {
     margin-left: 10px;
+}
+
+.g-nav ul.menu > li {
+    display: inline-block;
+}
+.g-nav ul.sub-menu > li {
+
 }
 
 .g-nav li:hover {
@@ -201,6 +231,8 @@ figcaption {
     width: 100%;
     border-bottom: 1px dashed #4F3244;
     opacity: 0;
+
+    pointer-events: none;
 
     transition: 0.25s;
     -webkit-transition: 0.25s;
