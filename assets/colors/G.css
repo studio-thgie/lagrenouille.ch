@@ -1,18 +1,30 @@
 body {
     background-color: #DDDE41;
-    color: #ffffff;
-} 
-
-h1,
-h2,
-a,
-.g-production-preview__article:hover p {
     color: #4F3244;
 }
 
-.g-logo__image {
-    display: none;
+h1, 
+p,
+.g-production-preview__article:hover p,
+.g-production__meta-duration  {
+    color: #4F3244;
 }
-.g-logo__image--alt {
-    display: inline-block;
+
+h2,
+h3,
+a,
+p.g-production-subtitle{
+    color: #EA5060;
+}
+
+.g-production-preview__list-item {
+    border-color: #EA5060;
+}
+
+.g-production__meta-age {
+    background-color: #EA5060;
+}
+
+.g-nav ul.sub-menu {
+    background-image: url(../img/svg/Menu_G.svg);
 }

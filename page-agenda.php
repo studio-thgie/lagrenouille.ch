@@ -51,20 +51,20 @@
                             ?>
 
                             <?php if( in_array( 'de', $lang ) !== false) : ?>
-                                <img class="g-production__meta_lang--de <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/de.svg' ); ?>" alt="Produktion in Deutsch"/>
+                                <img class="g-production__meta_lang--de <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_Vektor_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Deutsch"/>
                             <?php endif; ?>
                             <?php if( in_array( 'fr', $lang ) !== false) : ?>
-                                <img class="g-production__meta_lang--fr <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/fr.svg' ); ?>" alt="Produktion in Französisch"/>
+                                <img class="g-production__meta_lang--fr <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_Vektor_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
                             <?php endif; ?>
                         <?php endif; ?>
                         <h2><a href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a></h2>
-                        <p><?php the_field('subtitle', $p->ID); ?></p>
+                        <p class="g-production-subtitle"><?php the_field('subtitle', $p->ID); ?></p>
                     </header>
                     <aside>
                         <div class="g-production-preview__list-item__address">
                             <div>
                                     <span class="upper">
-                                        <img class="g-production-preview__list-item__marker-icon" src="<?php echo get_theme_file_uri( 'assets/img/marker.svg' ); ?>" alt="Dekorativer Marker"/>
+                                        <img class="g-production-preview__list-item__marker-icon" src="<?php echo get_theme_file_uri( 'assets/img/svg/Icon_Ort_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Dekorativer Marker"/>
                                         <?php echo get_the_title( $v->ID ); ?>
                                     </span>
                                 <?php
@@ -80,7 +80,7 @@
                         </div>
                         <?php if ( get_field('duration', $p->ID) ) : ?>
                             <span class="g-production__meta-duration" aria-label="Minimum Alter">
-                                <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/time.json' ); ?>" data-loop="true"></span>
+                                <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/GRE_SANDUHR_'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="1"></span>
                                 <?php the_field('duration', $p->ID); ?>'
                             </span>
                         <?php endif; ?>

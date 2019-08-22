@@ -14,13 +14,13 @@
             <article class="g-production__article">
                 <header>
                     <h1><?php the_title(); ?></h1>
-                    <p><?php the_field('subtitle'); ?></p>
+                    <p class="g-production-subtitle"><?php the_field('subtitle'); ?></p>
                 </header>
 
                 <aside class="g-production__meta-wrapper">
                     <?php if ( get_field('duration') ) : ?>
                         <span class="g-production__meta-duration" aria-label="Minimum Alter">
-                            <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/time.json' ); ?>" data-loop="true"></span>
+                            <span class="g-animation" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/GRE_SANDUHR_'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="true"></span>
                             <?php the_field('duration'); ?>'
                         </span>
                     <?php endif; ?>
@@ -36,10 +36,10 @@
                     ?>
 
                     <?php if( in_array( 'fr', $lang ) !== false) : ?>
-                        <img class="g-production__meta_lang--fr <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/fr.svg' ); ?>" alt="Produktion in Französisch"/>
+                        <img class="g-production__meta_lang--fr <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_Vektor_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
                     <?php endif; ?>
                     <?php if( in_array( 'de', $lang ) !== false) : ?>
-                        <img class="g-production__meta_lang--de <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/de.svg' ); ?>" alt="Produktion in Deutsch"/>
+                        <img class="g-production__meta_lang--de <?php echo $both_lang; ?>" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_Vektor_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Deutsch"/>
                     <?php endif; ?>
                     <?php if ( get_field('age') ) : ?>
                         <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>

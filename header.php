@@ -34,7 +34,8 @@
 
     <?php
 
-        $GLOBALS['color_scheme'] = array_rand(['R', 'G', 'V']); 
+        $colors = ['W', 'R', 'G', 'V'];
+        $GLOBALS['color_scheme'] = $colors[array_rand($colors)]; 
 
     ?>
 

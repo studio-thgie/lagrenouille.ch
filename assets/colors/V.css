@@ -1,19 +1,26 @@
 body {
     background-color: #4F3244;
-    color: #ffffff;
+    color: #DDDE41;
 }
 
-h1,
-h2,
-a, 
-a.g-link--cta,
+h1, 
+p,
+p.g-production-subtitle,
 .g-production-preview__article:hover p {
+    color: #DDDE41;
+}
+
+.g-production-preview__list-item {
+    border-color: #DDDE41;
+}
+
+h2,
+h3,
+a,
+.g-production__meta-duration {
     color: #ffffff;
 }
 
-.g-logo__image {
-    display: none;
-}
-.g-logo__image--alt {
-    display: inline-block;
+.g-nav ul.sub-menu {
+    background-image: url(../img/svg/Menu_V.svg);
 }
