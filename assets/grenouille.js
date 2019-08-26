@@ -1,7 +1,7 @@
 /* effects */
 let elements_with_effects = document.querySelectorAll('[data-effect]');
 
-setTimeout(() => {
+ready(function(){
 
     elements_with_effects.forEach(el => {
         switch (el.dataset.effect) {
@@ -39,7 +39,12 @@ setTimeout(() => {
                 break;
         }
     });
-}, 500);
+
+    var event = document.createEvent('HTMLEvents');
+    event.initEvent('resize', true, false);
+    window.dispatchEvent(event);
+
+});
 
 function random_rotation(el, min, max) {
     let rotation = -15 + Math.round(Math.random() * 30);
@@ -68,3 +73,14 @@ document.addEventListener('click', function (evt) {
     }
 
 }, false);
+
+/* basics */
+function ready(fn) {
+    if (document.readyState != 'loading'){
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+  
+  

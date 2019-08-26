@@ -692,7 +692,7 @@ figcaption {
     transition: 0.25s;
     
     opacity: 1;
-    width: 200px;
+    width: 100px;
 
     z-index: 9999;
 }
@@ -715,8 +715,6 @@ figcaption {
 
     position: absolute;
     left: 0;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
 
 }
 
@@ -724,8 +722,6 @@ figcaption {
 
     position: absolute;
     right: 0;
-    -webkit-transform: translateX(25%);
-    transform: translateX(25%);
 
 }
 
