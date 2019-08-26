@@ -14,13 +14,18 @@ p.g-production-subtitle,
     border-color: #DDDE41;
 }
 
-h2,
+h2, h2.h1,
 h3,
 a,
 .g-production__meta-duration {
     color: #ffffff;
 }
 
+a:hover {
+    color: #EA5060;
+}
+
 .g-nav ul.sub-menu {
-    background-image: url(../img/svg/Menu_V.svg);
+    background-color: #4F3244;
+    /* background-image: url(../img/svg/Menu_V.svg); */
 }

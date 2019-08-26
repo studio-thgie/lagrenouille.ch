@@ -37,7 +37,7 @@
                 <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); $count++; ?>
 
                     <article class="g-production-preview <?php echo ($count % 2 ? 'even' : 'odd');?>" data-effect="random-padding">
-                        <div class="g-production-preview__article">
+                        <a href="<?php the_permalink(); ?>" class="g-production-preview__article">
                             <?php if ( get_field('age') ) : ?>
                                 <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
                             <?php endif; ?>
@@ -48,8 +48,8 @@
                             <?php endif; ?>
                             <h2><?php the_title(); ?></h2>
                             <p class="g-production-preview__lead"><?php the_field('subtitle'); ?></p>
-                            <p><a href="<?php the_permalink(); ?>" class="g-link--cta"><?php _e('view', 'grenouille'); ?></a></p>
-                        </div>
+                            <!-- <p><a href="<?php the_permalink(); ?>" class="g-link--cta"><?php _e('view', 'grenouille'); ?></a></p> -->
+                        </a>
                     </article>
 
                 <?php endwhile; wp_reset_query(); ?>

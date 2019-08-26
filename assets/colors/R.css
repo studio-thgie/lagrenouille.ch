@@ -10,12 +10,17 @@ p,
     color: #4F3244;
 }
 
-h2,
+h2, h2.h1,
 h3,
 a,
 p.g-production-subtitle {
     color: #ffffff;
 }
+
+a:hover {
+    color: #DDDE41;
+}
+
 .g-production-preview__list-item {
     border-color: #ffffff;
 }
@@ -34,6 +39,11 @@ a.g-link--cta,
     background-color: #4F3244;
 }
 
+.g-production__meta-age {
+    color: #ffffff !important;
+}
+
 .g-nav ul.sub-menu {
-    background-image: url(../img/svg/Menu_R.svg);
+    background-color: #EA5060;
+    /* background-image: url(../img/svg/Menu_R.svg); */
 }

@@ -10,11 +10,15 @@ p,
     color: #4F3244;
 }
 
-h2,
+h2, h2.h1,
 h3,
 a,
 p.g-production-subtitle{
     color: #EA5060;
+}
+
+a:hover {
+    color: #4F3244;
 }
 
 .g-production-preview__list-item {
@@ -23,8 +27,10 @@ p.g-production-subtitle{
 
 .g-production__meta-age {
     background-color: #EA5060;
+    color: #4F3244;
 }
 
 .g-nav ul.sub-menu {
-    background-image: url(../img/svg/Menu_G.svg);
+    background-color: #DDDE41;
+    /* background-image: url(../img/svg/Menu_G.svg); */
 }

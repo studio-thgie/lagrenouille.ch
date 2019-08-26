@@ -30,7 +30,7 @@ setTimeout(() => {
                 var animation = bodymovin.loadAnimation({
                     container: el,
                     renderer: 'svg',
-                    loop: el.dataset.loop,
+                    loop: el.dataset.loop || true,
                     autoplay: true,
                     path: el.dataset.animation
                 })
@@ -47,10 +47,10 @@ function random_rotation(el, min, max) {
 }
 
 document.querySelectorAll('.g-shape--left').forEach(el => {
-    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight) + 'px';
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight + 100) + 'px';
 });
 document.querySelectorAll('.g-shape--right').forEach(el => {
-    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight) + 'px';
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight + 100) + 'px';
 });
 
 /* info ui */
