@@ -22,8 +22,8 @@ ready(function(){
                 break;
             case 'parallax':
                 new simpleParallax(el, {
-                    'scale': 2.5,
-                    'delay': 0
+                    'scale': Math.random() * 2 + 1.5,
+                    'delay': Math.random() * 1
                 });
                 break;
             case 'animation':

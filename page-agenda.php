@@ -13,14 +13,24 @@
         <main class="g-production-preview__list">
 
         <?php
+        
             $loop = new WP_Query( array(
                 'post_type' => 'Events',
                 'posts_per_page' => -1,
-                'meta_key'	=> 'date_and_time',
-                'orderby'	=> 'meta_value_num',
-                'order'		=> 'ASC'
-                )
-            );
+                'meta_query' 		=> array(
+                    array(
+                        'key'			=> 'date_and_time',
+                        'compare'		=> '>=',
+                        'value'			=> date('Y-m-d H:i:s'),
+                        'type'			=> 'DATETIME'
+                    ),
+                ),
+                'order'				=> 'ASC',
+                'orderby'			=> 'meta_value',
+                'meta_key'			=> 'date_and_time',
+                'meta_type'			=> 'DATE'
+            ) );
+
         ?>
 
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -69,17 +79,10 @@
                                 <div>
                                         <p class="upper">
                                             <img class="g-production-preview__list-item__marker-icon" src="<?php echo get_theme_file_uri( 'assets/img/svg/Icon_Ort_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Dekorativer Marker"/>
-                                            <?php echo get_the_title( $v->ID ); ?>
+                                            <?php echo get_the_title( $v->ID ); ?><br>
+                                            <?php the_field('street', $v->ID ); ?><br>
+                                            <?php the_field('zip', $v->ID ); ?> <?php the_field('city', $v->ID ); ?> 
                                         </p>
-                                    <?php
-
-                                        $content_post = get_post($v->ID);
-                                        $content = $content_post->post_content;
-                                        $content = apply_filters('the_content', $content);
-                                        $content = str_replace(']]>', ']]&gt;', $content);
-                                        echo $content;
-
-                                    ?>
                                 </div>
                             </div>
                             <?php if ( get_field('duration', $p->ID) ) : ?>
@@ -92,12 +95,12 @@
                                 <div>
                                     <h3><?php if(get_field('for_school')): ?>Schulvorstellung<?php else: ?>&nbsp;<?php endif; ?></h3>
                                     <?php 
-                                        $date = DateTime::createFromFormat('d.m.Y H:i', get_field('date_and_time'));
+                                        $date = strtotime(get_field('date_and_time'));
                                     ?>
                                     <p>
-                                        <?php echo $date->format('l'); ?><br>
-                                        <?php echo $date->format('d. F Y'); ?><br>
-                                        <?php echo $date->format('H:i'); ?> Uhr
+                                        <?php echo date_i18n('l', $date); ?><br>
+                                        <?php echo date_i18n('d. F Y', $date); ?><br>
+                                        <?php echo date_i18n('H:i', $date); ?> Uhr
                                     </p>
                                 </div>
                             </div>

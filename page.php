@@ -22,7 +22,7 @@
                     </figure>
                 <?php endif; ?>
 
-                <div class="g-production__description">
+                <div class="g-production__description <?php if ( get_field('one_column') ) { echo 'g-one-col'; } ?>">
                     <?php the_content(); ?>
                 </div>
             </article>

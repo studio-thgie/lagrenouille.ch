@@ -55,14 +55,25 @@
 
     function get_events($request) {
 
+        global $sitepress;
+        $sitepress->switch_lang('fr');
+
         $events_raw = new WP_Query( array(
             'post_type' => 'Events',
             'posts_per_page' => -1,
-            'meta_key'	=> 'start_date',
-            'orderby'	=> 'meta_value_num',
-            'order'		=> 'ASC'
-            )
-        );
+            'meta_query' 		=> array(
+                array(
+                    'key'			=> 'date_and_time',
+                    'compare'		=> '>=',
+                    'value'			=> date('Y-m-d H:i:s'),
+                    'type'			=> 'DATETIME'
+                ),
+            ),
+            'order'				=> 'ASC',
+            'orderby'			=> 'meta_value',
+            'meta_key'			=> 'date_and_time',
+            'meta_type'			=> 'DATE'
+        ) );
         $events = [];
 
         if (empty($events_raw)) {
@@ -71,15 +82,30 @@
 
         while ( $events_raw->have_posts() ) {
             $events_raw->the_post();
+
+            $p = get_field('production');
+            $v = get_field('venue');
+            $date = strtotime(get_field('date_and_time'));
+
             $events[] = [
-                'title' => get_the_title(),
-                'subtitle' => get_field('subtitle'),
-                'start_date' => get_field('start_date'),
-                'end_date' => get_field('end_date'),
+                'event_id' => get_the_ID(),
+                'event_title' => get_the_title( $p->ID ),
+                'subtitle' => get_field('subtitle', $p->ID),
+                'event_dates' => [
+                    'start_date' => date_i18n('Y-m-d H:i', $date)
+                ],
+                'detail_url' => get_permalink( $p->ID ),
+                'venue_name' => get_the_title( $v->ID ),
+                'venue_address' => get_field('street', $v->ID ),
+                'venue_zip' => get_field('zip', $v->ID ),
+                'venue_city' => get_field('city', $v->ID )
             ];
         }
     
-        $response = new WP_REST_Response($events);
+        $response = new WP_REST_Response(array(
+            'api_key' => 'CS-CFfm9zLTcY',
+            'events'  => $events
+        ));
         $response->set_status(200);
     
         return $response;
