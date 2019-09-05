@@ -5,7 +5,7 @@
             <span></span>
             <span></span>
         </button>
-        <?php wp_nav_menu('main'); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
     </nav>
     <div class="g-logo-wrapper">
         <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
@@ -19,13 +19,13 @@
         <?php endif; ?>
     </div> 
     <?php if ( get_field('cta_link') ) : ?><a href="<?php the_field('cta_link') ?>" aria-label="<?php the_field('cta_label') ?>" class="g-header__cta"><?php endif; ?>
-        <?php if ( get_field('cta_grafic') ) : ?>
+    <?php if ( get_field('cta_grafic_'.$GLOBALS['color_scheme']) ) : ?>
 
-            <?php $cta = $image = get_field('cta_grafic'); ?>
+        <?php $cta = get_field('cta_grafic_'.$GLOBALS['color_scheme']); ?>
 
-            <img src="<?php echo $cta['url']; ?>" alt="<?php echo $cta['alt']; ?>" data-effect="random-rotate">
-        <?php endif; ?>
-        <?php if ( get_field('cta_link') ) : ?></a><?php endif; ?>
+        <img src="<?php echo $cta['url']; ?>" alt="<?php echo $cta['alt']; ?>" data-effect="random-rotate">
+    <?php endif; ?>
+    <?php if ( get_field('cta_link') ) : ?></a><?php endif; ?>
 
 </header>
 

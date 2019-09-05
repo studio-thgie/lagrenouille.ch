@@ -12,7 +12,13 @@
 
         <style>
             .g-logo span {
-                width: 800px;
+                width: 700px;
+            }
+
+            @media (max-width: 768px) {
+                .g-logo span {
+                    width: 100%;
+                }
             }
         </style>
 
@@ -61,8 +67,9 @@
                 <?php the_field('link_bottom_label'); ?>
             </a>
             <?php endif; ?>
-        </main>
 
-        <?php get_template_part( 'shapes' ); ?>
+            <?php get_template_part( 'shapes' ); ?>
+
+        </main>
 
 <?php get_footer(); ?>

@@ -17,6 +17,7 @@ p.g-production-subtitle,
 h2, h2.h1,
 h3,
 a,
+.g-production__meta-age,
 .g-production__meta-duration {
     color: #ffffff;
 }
@@ -28,4 +29,12 @@ a:hover {
 .g-nav ul.sub-menu {
     background-color: #4F3244;
     /* background-image: url(../img/svg/Menu_V.svg); */
+}
+.g-btn__mobile-nav span,
+footer {
+    background-color: #ffffff;
+    color: #EA5060;
+}
+footer a, footer a:hover {
+    color: #EA5060;
 }

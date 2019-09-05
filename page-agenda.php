@@ -109,9 +109,9 @@
                 </article>
 
             <?php endwhile; wp_reset_query(); ?>
-            
-        </main>
 
-        <?php get_template_part( 'shapes' ); ?>
+            <?php get_template_part( 'shapes' ); ?>
+
+        </main>
 
 <?php get_footer(); ?>

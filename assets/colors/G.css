@@ -34,3 +34,11 @@ a:hover {
     background-color: #DDDE41;
     /* background-image: url(../img/svg/Menu_G.svg); */
 }
+
+footer {
+    background-color: #4F3244;
+    color: #EA5060;
+}
+footer a, footer a:hover {
+    color: #EA5060;
+}

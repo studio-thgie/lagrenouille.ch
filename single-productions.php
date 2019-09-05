@@ -59,16 +59,16 @@
                     </figure>
                 <?php endif; ?>
 
-                <div class="g-production__description">
+                <div class="g-production__description <?php if ( get_field('one_column') ) { echo 'g-one-col'; } ?>">
                     <?php the_content(); ?>
                 </div>
                 <div class="g-production__information">
                 <?php the_field('information'); ?>
                 </div>
             </article>
-            
-        </main>
 
-        <?php get_template_part( 'shapes' ); ?>
+            <?php get_template_part( 'shapes' ); ?>
+
+        </main>
 
 <?php get_footer(); ?>

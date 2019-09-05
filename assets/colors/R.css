@@ -47,3 +47,11 @@ a.g-link--cta,
     background-color: #EA5060;
     /* background-image: url(../img/svg/Menu_R.svg); */
 }
+
+footer {
+    background-color: #EA5060;
+    color: #4F3244;
+}
+footer a, footer a:hover {
+    color: #4F3244;
+}

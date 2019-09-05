@@ -29,8 +29,8 @@
 
         <?php endif; ?>
 
-        </main>
-
         <?php get_template_part( 'shapes' ); ?>
+
+        </main>
 
 <?php get_footer(); ?>

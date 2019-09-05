@@ -17,13 +17,12 @@ ready(function(){
                 })
                 break;
             case 'random-padding':
-                let padding = 1 + Math.random() * 10;
+                let padding = 1 + Math.random() * (window.innerWidth < 768 ? 3 : 8);
                 el.style.padding = padding+'em';
                 break;
             case 'parallax':
                 new simpleParallax(el, {
-                    'scale': Math.random() * 2 + 1.5,
-                    'delay': Math.random() * 1
+                    'scale': Math.random() * 2 + 1.5
                 });
                 break;
             case 'animation':
@@ -40,9 +39,19 @@ ready(function(){
         }
     });
 
-    var event = document.createEvent('HTMLEvents');
-    event.initEvent('resize', true, false);
-    window.dispatchEvent(event);
+    if(document.querySelector('.g-production__slideshow')){
+        var elem = document.querySelector('.g-production__slideshow');
+        var flkty = new Flickity( elem, {
+            wrapAround: true,
+            autoPlay: true
+        });
+    }
+
+    setTimeout(function() {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        window.dispatchEvent(event);
+    }, 250);
 
 });
 
@@ -52,10 +61,10 @@ function random_rotation(el, min, max) {
 }
 
 document.querySelectorAll('.g-shape--left').forEach(el => {
-    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight + 100) + 'px';
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight * 2) + 'px';
 });
 document.querySelectorAll('.g-shape--right').forEach(el => {
-    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight + 100) + 'px';
+    el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight * 2) + 'px';
 });
 
 /* info ui */

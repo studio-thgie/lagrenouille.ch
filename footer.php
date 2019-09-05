@@ -1,4 +1,10 @@
-        <footer></footer>
+        <footer>
+
+        &copy; <?php echo date("Y"); ?> Théâtre de la Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
+        
+        <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+
+        </footer>
 
     </div>
 

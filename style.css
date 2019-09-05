@@ -51,7 +51,8 @@
 /* basics */
 html {
     font-family: 'beausite-classic', sans-serif;
-    font-size: 100%;
+    font-size: 80%;
+    overflow-x: hidden;
 }
 
 body {
@@ -145,7 +146,7 @@ figcaption {
 
 .g-logo span {
     display: inline-block;
-    width: 500px;
+    width: 350px;
     height: auto;
     text-align: right;
 }
@@ -159,6 +160,7 @@ figcaption {
     top: 170px;
     left: 50px;
     z-index: 9999;
+    width: 240px;
 }
 
 .g-logo--row {
@@ -186,7 +188,7 @@ figcaption {
     display: none;
     position: absolute;
 
-    top: 35px;
+    top: 30px;
     left: -20px;
     width: 300px;
     text-align: left;
@@ -413,6 +415,11 @@ figcaption {
     mix-blend-mode: unset;
 }
 
+.g-production__slideshow {
+    padding: 0;
+    list-style: none;
+}
+
 .g-production-preview__article p,
 .g-production-preview__article h2 {
     -webkit-transition: 0.25s;
@@ -632,8 +639,8 @@ figcaption {
 
     line-height: 84px;
     text-align: center;
-    font-size: 2.5em;
-    font-weight: 100;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .g-production-preview .g-production__meta-age {
@@ -692,7 +699,7 @@ figcaption {
 }
 
 .g-production__meta-duration {
-    font-size: 3.5em;
+    font-size: 2em;
     text-align: center;
     position: relative;
     top: -15px;
@@ -701,9 +708,9 @@ figcaption {
 
 .g-production__meta-duration span {
     display: inline-block;
-    -webkit-transform: translate(15%, 30%);
-    transform: translate(15%, 30%);
-    width: 120px;
+    -webkit-transform: translate(15%, 28%);
+    transform: translate(15%, 28%);
+    width: 50px;
 }
 
 /* shapes */
@@ -748,9 +755,27 @@ figcaption {
 }
 
 footer {
-    height: 120px;
     margin-top: 6.875rem;
     background-color: #EA5060;
+    color: #ddde41;
+    padding: 3em 3em 3.75em;
+}
+footer a, footer a:hover {
+    color: #ddde41;
+    text-decoration: underline;
+}
+footer a:hover {
+    text-decoration: none;
+}
+
+footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .g-btn__mobile-nav {
@@ -800,6 +825,13 @@ footer {
 
 .g-btn__mobile-nav span:nth-child(3) {
     top: 28px;
+}
+
+/* form */
+input[type="text"],
+input[type="email"] {
+    width: 300px;
+    margin-bottom: 10px;
 }
 
 /* typo only */
@@ -857,7 +889,7 @@ p.g-production-preview__lead {
 .g-production__article p,
 .g-info__list-item p,
 .g-production-preview__list-item__address span {
-    font-size: 2.5em;
+    font-size: 1.5em;
 }
 
 .g-production-preview__list-item p {
@@ -888,7 +920,7 @@ a:not([class]) {
     max-width: 600px;
     margin: 0 auto;
 
-    font-size: 5em;
+    font-size: 3.5em;
     font-weight: 700;
     text-align: center;
     text-decoration: underline;
@@ -954,9 +986,10 @@ figcaption {
         top: 0;
         left: 0;
         width: 100%;
+        z-index: 100;
     }
 
-    .g-nav ul {
+    .g-nav ul.menu {
         max-height: 0;
         overflow: hidden;
         padding: 0;
@@ -969,17 +1002,18 @@ figcaption {
     }
 
     .g-nav.g-nav--unfolded {
-        height: 100%;
-        z-index: 100;
+        min-height: 100%;
     }
 
     .g-nav.g-nav--unfolded ul {
-        height: 100%;
+        margin-top: 0;
+        padding-top: 3.75rem;
+        min-height: 800px;
         max-height: 1000px;
     }
 
     .g-nav li {
-        display: block;
+        display: block !important;
         text-align: right;
         padding-right: 20px;
     }
@@ -1002,6 +1036,24 @@ figcaption {
 
     .g-nav.g-nav--unfolded li a {
         opacity: 1;
+    }
+
+    .g-nav ul.sub-menu {
+        padding: 0;
+        display: block;
+        position: static;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        margin-bottom: 20px;
+        background: none !important;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        
+    }
+    .g-nav ul.sub-menu > li {
+        padding: 0;
+        margin: 0;
     }
 
     .g-info__list-item__body {
@@ -1050,7 +1102,7 @@ figcaption {
     .g-production-preview__list-item__school {
         text-align: left;
     }
-    
+
     .g-production__description.g-one-col {
         width: 100%;
     }
@@ -1059,6 +1111,7 @@ figcaption {
 @media (max-width: 768px) {
     .g-logo-wrapper {
         display: block;
+        width: 90%;
     }
 
     .g-logo-wrapper h1 {
@@ -1066,7 +1119,9 @@ figcaption {
     }
 
     .g-header__cta {
-        width: 100px;
+        width: 140px;
+        left: 30px;
+        top: 100px;
     }
 
     .g-header__cta img {
