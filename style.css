@@ -930,7 +930,6 @@ a:not([class]) {
 a.g-link--cta {
     display: inline-block;
     padding: 0.25em 0.5em;
-    color: #4F3244;
 
     border: 1px dashed #EA5060;
     font-size: 1.25em;
