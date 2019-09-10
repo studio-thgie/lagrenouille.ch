@@ -39,14 +39,6 @@ ready(function(){
         }
     });
 
-    if(document.querySelector('.g-production__slideshow')){
-        var elem = document.querySelector('.g-production__slideshow');
-        var flkty = new Flickity( elem, {
-            wrapAround: true,
-            autoPlay: true
-        });
-    }
-
     setTimeout(function() {
         var event = document.createEvent('HTMLEvents');
         event.initEvent('resize', true, false);
@@ -59,6 +51,16 @@ ready(function(){
     }, 250);
 
 });
+
+jQuery(window).bind('load', function() {
+    if(document.querySelector('.g-production__slideshow')){
+        var elem = document.querySelector('.g-production__slideshow');
+        var flkty = new Flickity( elem, {
+            wrapAround: true,
+            autoPlay: true
+        });
+    }
+})
 
 function random_rotation(el, min, max) {
     let rotation = -15 + Math.round(Math.random() * 30);
