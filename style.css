@@ -921,6 +921,16 @@ a:hover {
     top: -4px;
 }
 
+@media (max-width: 480px) {
+    .splash-button {
+        font-size: 18px !important;
+    }
+    .splash-text {
+        font-size: 22px !important;
+    }
+}
+
+
 a:not([class]) {
     text-decoration: underline;
 }
