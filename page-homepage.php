@@ -8,6 +8,10 @@
 
     get_header();
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
 ?>
 
         <style>
@@ -33,11 +37,22 @@
             <section aria-label="Vorschau der nächsten Produktionen" class="g-production-preview__wrapper">
 
             <?php
-                $loop = new WP_Query( array(
+                $query = array(
                     'post_type' => 'Productions',
                     'posts_per_page' => -1,
-                    )
                 );
+
+                if(get_field('filter_productions')){
+                    $query['meta_query'] = array(
+                        array(
+                            'key'			=> 'event_category',
+                            'compare'		=> 'LIKE',
+                            'value'			=> get_field('filter_productions'),
+                        ),
+                    );
+                }
+
+                $loop = new WP_Query( $query );
             ?>
 
                 <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); $count++; ?>

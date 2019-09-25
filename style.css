@@ -188,7 +188,7 @@ figcaption {
     display: none;
     position: absolute;
 
-    top: 30px;
+    top: 25px;
     left: -20px;
     width: 300px;
     text-align: left;
@@ -910,6 +910,26 @@ a {
 a:hover {
     color: #EA5060;
 }
+.splash-button {
+    position: relative;
+    top: 0;
+
+    transition: 0.5s;
+}
+.splash-button:hover {
+    color: #fff;
+    top: -4px;
+}
+
+@media (max-width: 480px) {
+    .splash-button {
+        font-size: 18px !important;
+    }
+    .splash-text {
+        font-size: 22px !important;
+    }
+}
+
 
 a:not([class]) {
     text-decoration: underline;
@@ -930,7 +950,6 @@ a:not([class]) {
 a.g-link--cta {
     display: inline-block;
     padding: 0.25em 0.5em;
-    color: #4F3244;
 
     border: 1px dashed #EA5060;
     font-size: 1.25em;

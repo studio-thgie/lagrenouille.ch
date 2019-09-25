@@ -2,7 +2,7 @@
 
     /*
 
-    Template Name: Agenda
+    Template Name: Reservation
     
     */
 
@@ -10,38 +10,18 @@
 
 ?>
 
-        <main class="g-production-preview__list">
+        <main>
+            <section>
 
-        <?php
-        
-            $loop = new WP_Query( array(
-                'post_type' => 'Events',
-                'posts_per_page' => -1,
-                'meta_query' 		=> array(
-                    array(
-                        'key'			=> 'date_and_time',
-                        'compare'		=> '>=',
-                        'value'			=> date('Y-m-d H:i:s'),
-                        'type'			=> 'DATETIME'
-                    ),
-                ),
-                'order'				=> 'ASC',
-                'orderby'			=> 'meta_value',
-                'meta_key'			=> 'date_and_time',
-                'meta_type'			=> 'DATE'
-            ) );
+                <?php
 
-        ?>
+                    $event = get_post($_GET['id']);
 
-            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                    $p = get_field('production', $event->ID);
+                    $v = get_field('venue', $event->ID);
 
-                <?php 
-
-                    $p = get_field('production');
-                    $v = get_field('venue');
-                
                 ?>
-            
+
                 <article class="g-production-preview__list-item clear">
                     <a href="<?php echo get_permalink( $p->ID ); ?>" class="g-production-preview__link">
                         <header>
@@ -70,6 +50,7 @@
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
+
                             <h2><?php echo get_the_title( $p->ID ); ?></h2>
                             <p class="g-production-subtitle"><?php the_field('subtitle', $p->ID); ?></p>
                         </header>
@@ -92,40 +73,36 @@
                             <?php endif; ?>
                             <div class="g-production-preview__list-item__school" data-effect="random-rotate">
                                 <div>
-                                    <h3><?php if(get_field('for_school')): ?>
-                                    
-                                    <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                        Schulvorstellung
-                                    <?php else: ?>
-                                        Scolaire
-                                    <?php endif; ?>
-                                    
-                                    <?php else: ?>&nbsp;<?php endif; ?></h3>
+                                    <h3><?php if(get_field('for_school', $event->ID)): ?>Schulvorstellung<?php else: ?>&nbsp;<?php endif; ?></h3>
                                     <?php 
-                                        $date = strtotime(get_field('date_and_time'));
+                                        $date = strtotime(get_field('date_and_time', $event->ID));
                                     ?>
                                     <p>
                                         <?php echo date_i18n('l', $date); ?><br>
-                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                            <?php echo date_i18n('d. F Y', $date); ?><br>
-                                        <?php else: ?>
-                                            <?php echo date_i18n('d F Y', $date); ?><br>
-                                        <?php endif; ?>
-                                        <?php echo date_i18n('H:i', $date); ?> 
-                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                            Uhr
-                                        <?php endif; ?>
+                                        <?php echo date_i18n('d. F Y', $date); ?><br>
+                                        <?php echo date_i18n('H:i', $date); ?> Uhr
                                     </p>
                                 </div>
                             </div>
                         </aside>
                     </a>
-                    <p>
-                        <a href="/<?php echo ICL_LANGUAGE_CODE; ?>/reservation?id=<?php echo get_the_ID(); ?>" class="g-link--cta">Reservation</a>
-                    </p>
                 </article>
 
-            <?php endwhile; wp_reset_query(); ?>
+                <script>
+                
+                    var reservation_event = '<?php echo get_the_title( $p->ID ) . ', ' . date_i18n('d. F Y', $date) . ' - ' . date_i18n('H:i', $date); ?>';
+                
+                </script>
+
+                <br><br>
+            
+                <article class="g-production__article">
+                    <div class="g-production__description g-one-col">
+                        <?php the_content(); ?>
+                    </div>
+                </article>
+
+            </section>
 
             <?php get_template_part( 'shapes' ); ?>
 

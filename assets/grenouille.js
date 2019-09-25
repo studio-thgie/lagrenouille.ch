@@ -39,6 +39,20 @@ ready(function(){
         }
     });
 
+    setTimeout(function() {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        window.dispatchEvent(event);
+
+        if(typeof reservation_event !== 'undefined'){
+            jQuery( '#nf-field-12' ).val( reservation_event ).trigger( 'change' );
+            // document.querySelector('#nf-field-13').value = reservation_event;
+        }
+    }, 250);
+
+});
+
+jQuery(window).bind('load', function() {
     if(document.querySelector('.g-production__slideshow')){
         var elem = document.querySelector('.g-production__slideshow');
         var flkty = new Flickity( elem, {
@@ -46,14 +60,7 @@ ready(function(){
             autoPlay: true
         });
     }
-
-    setTimeout(function() {
-        var event = document.createEvent('HTMLEvents');
-        event.initEvent('resize', true, false);
-        window.dispatchEvent(event);
-    }, 250);
-
-});
+})
 
 function random_rotation(el, min, max) {
     let rotation = -15 + Math.round(Math.random() * 30);
