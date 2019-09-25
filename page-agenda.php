@@ -120,9 +120,27 @@
                             </div>
                         </aside>
                     </a>
+					<?php
+					
+						$reservation = true;
+						$link = '/' . ICL_LANGUAGE_CODE . '/reservation?id=' . get_the_ID();
+						$target = '_self';
+					
+						if(!is_null(get_field('reservation_activated'))){
+							$reservation = get_field('reservation_activated');
+						}
+					
+						if(!is_null(get_field('reservation_extern'))){
+							$link = get_field('reservation_extern');
+							$target = '_blank';
+						}
+					
+					?>
+					<?php if($reservation): ?>
                     <p>
-                        <a href="/<?php echo ICL_LANGUAGE_CODE; ?>/reservation?id=<?php echo get_the_ID(); ?>" class="g-link--cta">Reservation</a>
+                        <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-link--cta">Reservation</a>
                     </p>
+					<?php endif; ?>
                 </article>
 
             <?php endwhile; wp_reset_query(); ?>

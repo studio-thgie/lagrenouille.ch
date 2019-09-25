@@ -46,7 +46,7 @@ ready(function(){
 
         if(typeof reservation_event !== 'undefined'){
             jQuery( '#nf-field-12' ).val( reservation_event ).trigger( 'change' );
-            // document.querySelector('#nf-field-13').value = reservation_event;
+            jQuery( '#nf-field-21' ).val( reservation_event ).trigger( 'change' );
         }
     }, 250);
 
