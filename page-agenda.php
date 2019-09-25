@@ -70,7 +70,6 @@
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
-
                             <h2><?php echo get_the_title( $p->ID ); ?></h2>
                             <p class="g-production-subtitle"><?php the_field('subtitle', $p->ID); ?></p>
                         </header>
@@ -93,19 +92,38 @@
                             <?php endif; ?>
                             <div class="g-production-preview__list-item__school" data-effect="random-rotate">
                                 <div>
-                                    <h3><?php if(get_field('for_school')): ?>Schulvorstellung<?php else: ?>&nbsp;<?php endif; ?></h3>
+                                    <h3><?php if(get_field('for_school')): ?>
+                                    
+                                    <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
+                                        Schulvorstellung
+                                    <?php else: ?>
+                                        Scolaire
+                                    <?php endif; ?>
+                                    
+                                    <?php else: ?>&nbsp;<?php endif; ?></h3>
                                     <?php 
                                         $date = strtotime(get_field('date_and_time'));
                                     ?>
                                     <p>
                                         <?php echo date_i18n('l', $date); ?><br>
-                                        <?php echo date_i18n('d. F Y', $date); ?><br>
-                                        <?php echo date_i18n('H:i', $date); ?> Uhr
+                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
+                                            <?php echo date_i18n('d. F Y', $date); ?><br>
+                                        <?php else: ?>
+                                            <?php echo date_i18n('d F Y', $date); ?><br>
+                                        <?php endif; ?>
+                                        <?php echo date_i18n('H:i', $date); ?> 
+                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
+                                            Uhr
+                                        <?php endif; ?>
                                     </p>
                                 </div>
                             </div>
                         </aside>
                     </a>
+                    <p>
+                        <a href="/<?php echo ICL_LANGUAGE_CODE; ?>/reservation?id=<?php echo get_the_ID(); ?>" class="g-link--cta">Reservation</a>
+                    </p>
+
                 </article>
 
             <?php endwhile; wp_reset_query(); ?>
