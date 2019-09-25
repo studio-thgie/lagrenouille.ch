@@ -102,6 +102,9 @@
                 'event_dates' => [
                     'start_date' => date_i18n('Y-m-d H:i', $date)
                 ],
+                'event_categories' => ['TH'],
+                'event_status' => 'PUBLIC',
+                'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
                 'detail_url' => get_permalink( $p->ID ),
                 'venue_name' => get_the_title( $v->ID ),
                 'venue_address' => get_field('street', $v->ID ),
