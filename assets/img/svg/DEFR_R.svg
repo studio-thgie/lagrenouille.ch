@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="139.695" height="85.467" viewBox="0 0 139.695 85.467">
+  <g id="Component_1" data-name="Component 1" transform="translate(2.534 1.172)">
+    <g id="Group_147" data-name="Group 147" transform="translate(-75.192 -242.807) rotate(-11)">
+      <g id="Group_147-2" data-name="Group 147" transform="translate(22.86 276.466)">
+        <path id="Path_158" data-name="Path 158" d="M22.478,336.677l8.345-16.408V292.377s-1.67-13.948,15.02-13.948h94.378s9.179.822,9.179,12.307v24.611s0,11.485-13.35,11.485H40Z" transform="translate(-22.478 -278.429)" fill="none" stroke="#e2e738" stroke-width="2"/>
+      </g>
+      <text id="_" data-name="  " transform="translate(31.287 310.895)" fill="#e2e738" font-size="28" font-family="Helvetica"><tspan x="0" y="0" xml:space="preserve">  </tspan></text>
+      <text id="DE" transform="translate(45.868 310.422)" fill="#fff" font-size="29" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">DE</tspan></text>
+      <text id="FR" transform="translate(93.881 310.422)" fill="#ea5060" font-size="29" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">FR</tspan></text>
+    </g>
+  </g>
+</svg>

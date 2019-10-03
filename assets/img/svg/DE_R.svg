@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93.156" height="75.008" viewBox="0 0 93.156 75.008">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_95" data-name="Path 95" d="M0,37.222H82.673V-21.889H0Z" transform="translate(0 21.889)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_164" data-name="Group 164" transform="matrix(0.978, -0.208, 0.208, 0.978, 4.551, 38.599)">
+    <g id="Group_115" data-name="Group 115" transform="translate(0 -21.889)" clip-path="url(#clip-path)">
+      <g id="Group_114" data-name="Group 114" transform="translate(3.226 1.35)">
+        <path id="Path_94" data-name="Path 94" d="M0,34.258,7.81,18.933V-7.119S6.249-20.146,21.866-20.146H69.505S78.1-19.379,78.1-8.653V14.337s0,10.726-12.5,10.726H16.4Z" transform="translate(0 20.146)" fill="none" stroke="#DEDE42" stroke-width="2"/>
+      </g>
+      <text id="_" data-name="  " transform="translate(11.257 32.933)" fill="#3f293e" font-size="28" font-family="Helvetica"><tspan x="0" y="0" xml:space="preserve">  </tspan></text>
+      <text id="DE" transform="translate(25.026 34.858)" fill="#503244" font-size="31" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">DE</tspan></text>
+    </g>
+  </g>
+</svg>

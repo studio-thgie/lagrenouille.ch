@@ -1,5 +1,7 @@
 <?php
 
+/*
+
 $colors = ['W', 'R', 'G', 'V'];
 
 for($l = 1; $l <= 2; $l++){
@@ -15,5 +17,7 @@ for($r = 1; $r <= 2; $r++){
         echo '<span class="g-shape--right"><img data-effect="parallax" src="'.get_theme_file_uri( 'assets/img/shapes/Element_R'.rand(1,5).'_'.$c.'.svg' ).'"></span>';
     }
 }
+
+*/
 
 ?>

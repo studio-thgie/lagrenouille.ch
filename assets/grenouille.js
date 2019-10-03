@@ -1,24 +1,24 @@
 /* effects */
 let elements_with_effects = document.querySelectorAll('[data-effect]');
 
-ready(function(){
+ready(function () {
 
     elements_with_effects.forEach(el => {
         switch (el.dataset.effect) {
             case 'random-rotate':
                 random_rotation(el, -15, 30);
-                el.addEventListener('mouseover', function(){
+                el.addEventListener('mouseover', function () {
                     random_rotation(el, -15, 30);
                 })
                 break;
             case 'random-rotate-hover':
-                el.addEventListener('mouseover', function(){
+                el.addEventListener('mouseover', function () {
                     random_rotation(el, -1, 1);
                 })
                 break;
             case 'random-padding':
                 let padding = 1 + Math.random() * (window.innerWidth < 768 ? 3 : 8);
-                el.style.padding = padding+'em';
+                el.style.padding = padding + 'em';
                 break;
             case 'parallax':
                 new simpleParallax(el, {
@@ -39,23 +39,23 @@ ready(function(){
         }
     });
 
-    setTimeout(function() {
+    setTimeout(function () {
         var event = document.createEvent('HTMLEvents');
         event.initEvent('resize', true, false);
         window.dispatchEvent(event);
 
-        if(typeof reservation_event !== 'undefined'){
-            jQuery( '#nf-field-12' ).val( reservation_event ).trigger( 'change' );
-            jQuery( '#nf-field-21' ).val( reservation_event ).trigger( 'change' );
+        if (typeof reservation_event !== 'undefined') {
+            jQuery('#nf-field-12').val(reservation_event).trigger('change');
+            jQuery('#nf-field-21').val(reservation_event).trigger('change');
         }
     }, 250);
 
 });
 
-jQuery(window).bind('load', function() {
-    if(document.querySelector('.g-production__slideshow')){
+jQuery(window).bind('load', function () {
+    if (document.querySelector('.g-production__slideshow')) {
         var elem = document.querySelector('.g-production__slideshow');
-        var flkty = new Flickity( elem, {
+        var flkty = new Flickity(elem, {
             wrapAround: true,
             autoPlay: true
         });
@@ -64,7 +64,7 @@ jQuery(window).bind('load', function() {
 
 function random_rotation(el, min, max) {
     let rotation = -15 + Math.round(Math.random() * 30);
-    el.style.transform = 'rotate('+rotation+'deg)';
+    el.style.transform = 'rotate(' + rotation + 'deg)';
 }
 
 document.querySelectorAll('.g-shape--left').forEach(el => {
@@ -74,29 +74,32 @@ document.querySelectorAll('.g-shape--right').forEach(el => {
     el.style.top = Math.random() * (document.body.offsetHeight - el.offsetHeight * 2) + 'px';
 });
 
-/* info ui */
+/* ui */
 document.addEventListener('click', function (evt) {
 
-	if (evt.target.matches('.g-info__list-item h2')) {
-        document.querySelectorAll('.g-info__list-item--unfolded').forEach(function(el, i){
+    if (evt.target.matches('.g-info__list-item h2')) {
+        document.querySelectorAll('.g-info__list-item--unfolded').forEach(function (el, i) {
             el.classList.remove('g-info__list-item--unfolded')
         });
-		evt.target.parentNode.parentNode.classList.toggle('g-info__list-item--unfolded');
+        evt.target.parentNode.parentNode.classList.toggle('g-info__list-item--unfolded');
     }
-    
-	if (evt.target.matches('.g-btn__mobile-nav')) {
+
+    if (evt.target.matches('.g-btn__mobile-nav')) {
         document.querySelector('.g-nav').classList.toggle('g-nav--unfolded')
+    }
+
+    if (evt.target.matches('.g-button-foldable')) {
+        evt.target.classList.toggle('g-button-foldable--open');
+        evt.target.parentNode.parentNode.querySelector('.production__additional-block__content').classList.toggle('production__additional-block__content--open')
     }
 
 }, false);
 
 /* basics */
 function ready(fn) {
-    if (document.readyState != 'loading'){
-      fn();
+    if (document.readyState != 'loading') {
+        fn();
     } else {
-      document.addEventListener('DOMContentLoaded', fn);
+        document.addEventListener('DOMContentLoaded', fn);
     }
-  }
-  
-  
+}

@@ -55,3 +55,7 @@ footer {
 footer a, footer a:hover {
     color: #4F3244;
 }
+.g-production__image-wrapper:before,
+.g-production-preview__image:before {
+    background-color: #4F3244;
+}

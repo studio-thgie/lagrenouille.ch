@@ -34,7 +34,7 @@
                     <?php endif; ?>
                 <?php endif; ?>
 
-                <div class="g-production__description <?php if ( get_field('one_column') ) { echo 'g-one-col'; } ?>">
+                <div class="g-production__description">
                     <?php the_content(); ?>
                 </div>
             </article>
