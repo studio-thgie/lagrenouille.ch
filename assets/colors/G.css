@@ -9,6 +9,9 @@ p,
 .g-production__meta-duration  {
     color: #4F3244;
 }
+.g-lang-change__item {
+    background: #DDDE41;
+}
 
 h2, h2.h1,
 h3,
@@ -29,7 +32,9 @@ a:hover {
     background-color: #EA5060;
     color: #4F3244;
 }
-
+.g-nav {
+    background-color: #DDDE41;
+}
 .g-nav ul.sub-menu {
     background-color: #DDDE41;
     /* background-image: url(../img/svg/Menu_G.svg); */

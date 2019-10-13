@@ -21,11 +21,17 @@ a,
 .g-production__meta-duration {
     color: #ffffff;
 }
+.g-lang-change__item {
+    background: #4F3244;
+}
 
 a:hover {
     color: #EA5060;
 }
 
+.g-nav {
+    background-color: #4F3244;
+}
 .g-nav ul.sub-menu {
     background-color: #4F3244;
     /* background-image: url(../img/svg/Menu_V.svg); */

@@ -6,6 +6,7 @@
             <span></span>
         </button>
         <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+        <!--<?php get_search_form(); ?>-->
     </nav>
     <div class="g-logo-wrapper">
         <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
