@@ -125,11 +125,7 @@
                                 <div>
                                     <h3><?php if(get_field('for_school')): ?>
                                     
-                                    <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                        Schulvorstellung
-                                    <?php else: ?>
-                                        Scolaire
-                                    <?php endif; ?>
+                                    <?php _e( 'school', 'grenouille' ); ?>
                                     
                                     <?php else: ?>&nbsp;<?php endif; ?></h3>
                                     <?php 

@@ -55,10 +55,10 @@ msgstr ""
 msgid "Production"
 msgstr ""
 
-#. Name of the theme
-msgid "Théâtre de la Grenouille"
-msgstr ""
-
-#: page-homepage.php:43
+#. view
 msgid "view"
-msgstr ""
+msgstr "Ansehen"
+
+#. search
+msgid "search"
+msgstr "Suchen"

@@ -146,7 +146,15 @@
 		) return;
 		$q->set('orderby', 'menu_order');
 		$q->set('order', 'ASC');
-	}
+    }
+
+    function filter_search($query) {
+        if (!$query->is_admin && $query->is_search) {
+            $query->set('post_type', array('post', 'page', 'productions'));
+        }
+        return $query;
+    }
+    add_filter('pre_get_posts', 'filter_search');
 
 
 ?>

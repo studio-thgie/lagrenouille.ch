@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Théâtre de la Grenouille\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-08-19 18:24+0000\n"
-"PO-Revision-Date: 2019-08-19 18:25+0000\n"
+"PO-Revision-Date: 2019-08-23 09:27+0000\n"
 "Last-Translator: admin <adrian@thgie.ch>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #. Name of the template
 msgid "Agenda"
-msgstr ""
+msgstr "Spielplan"
 
 #. Name of the template
 msgid "Default"
@@ -52,12 +52,16 @@ msgstr ""
 
 #. Name of the template
 msgid "Production"
-msgstr ""
+msgstr "Produktion"
 
 #. Name of the theme
 msgid "Théâtre de la Grenouille"
 msgstr ""
 
-#: page-homepage.php:43
+#: view
 msgid "view"
 msgstr "Ansehen"
+
+#: search
+msgid "search"
+msgstr "Suchen"

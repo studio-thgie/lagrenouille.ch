@@ -6,7 +6,13 @@
             <span></span>
         </button>
         <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
-        <!--<?php get_search_form(); ?>-->
+        <form role="search" method="get" id="searchform" class="searchform" action="<?php _e('search_action', 'grenouille'); ?>">
+            <div>
+                <label class="screen-reader-text" for="s"><?php _e( 'search', 'grenouille' ); ?></label>
+                <input type="text" value="" name="q" id="q" placeholder="<?php _e( 'search', 'grenouille' ); ?>">
+                <input type="submit" id="searchsubmit" value="<?php _e( 'search', 'grenouille' ); ?>">
+            </div>
+        </form>
     </nav>
     <div class="g-logo-wrapper">
         <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
