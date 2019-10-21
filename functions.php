@@ -99,8 +99,11 @@
                 'event_id' => get_the_ID(),
                 'event_title' => get_the_title( $p->ID ),
                 'subtitle' => get_field('subtitle', $p->ID),
+				'event_description' => get_the_content(null, false, $p->ID),
                 'event_dates' => [
-                    'start_date' => date_i18n('Y-m-d H:i', $date)
+					[
+						'start_date' => date_i18n('Y-m-d H:i', $date)
+					]
                 ],
                 'event_categories' => ['TH'],
                 'event_status' => 'PUBLIC',
@@ -123,6 +126,27 @@
     }
     
 
+	add_action('parse_query', 'pmg_ex_sort_posts');
+	/**
+	 * Hooked into `parse_query` this changes the orderby and order arguments of
+	 * the query, forcing the post order on post type archives for `your_custom_pt`
+	 * and a few taxonomies to follow the menu order.
+	 *
+	 * @param   object $q The WP_Query object.  This is passed by reference, you
+	 *          don't have to return anything.
+	 * @return  null
+	 */
+	function pmg_ex_sort_posts($q)
+	{
+		if(!$q->is_main_query() || is_admin())
+			return;
+
+		if(
+			!is_post_type_archive('productions')
+		) return;
+		$q->set('orderby', 'menu_order');
+		$q->set('order', 'ASC');
+	}
 
 
 ?>
