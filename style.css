@@ -51,7 +51,7 @@
 /* basics */
 html {
     font-family: 'beausite-classic', sans-serif;
-    font-size: 80%;
+    font-size: 70%;
     overflow-x: hidden;
 }
 
@@ -194,7 +194,7 @@ figcaption {
     display: none;
     position: absolute;
 
-    top: 25px;
+    top: 18px;
     left: -20px;
     width: 300px;
     text-align: left;
@@ -206,7 +206,7 @@ figcaption {
     background-size: contain;
     background-repeat: no-repeat;
 
-    font-size: 0.7em;
+    font-size: 0.9em;
     line-height: 1.6;
 
     z-index: 1000;
@@ -426,6 +426,10 @@ figcaption {
     -webkit-filter: none;
     filter: none;
     mix-blend-mode: unset;
+}
+
+.flickity-viewport {
+    max-height: 500px;
 }
 
 .g-production__slideshow {
@@ -810,12 +814,14 @@ footer ul li {
 .production__additional-block__content {
     overflow: hidden;
     transition: 0.5s;
+    padding-top: 0;
 }
 .production__additional-block__content--folded {
     max-height: 0;
 }
 .production__additional-block__content--folded.production__additional-block__content--open {
     max-height: 3000px;
+    padding-top: 30px;
 }
 
 /* form */
@@ -1007,8 +1013,9 @@ button.g-button {
     background: none;
     cursor: pointer;
 }
-
-
+h3.g-foldable__title {
+    cursor: pointer;
+}
 button.g-button.g-button-foldable {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);

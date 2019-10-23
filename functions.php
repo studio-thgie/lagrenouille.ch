@@ -29,7 +29,7 @@
              * Add Custom Image Sizes
              */
             add_image_size( 'event-preview', 900, 9999 );
-            add_image_size( 'header-slideshow', 1280, 600 );
+            add_image_size( 'header-slideshow', 1280, 500 );
             add_image_size( 'event-header', 1920, 9999 );
 
             /**
@@ -138,14 +138,10 @@
 	 */
 	function pmg_ex_sort_posts($q)
 	{
-		if(!$q->is_main_query() || is_admin())
-			return;
-
-		if(
-			!is_post_type_archive('productions')
-		) return;
-		$q->set('orderby', 'menu_order');
-		$q->set('order', 'ASC');
+		if(is_page_template('page-homepage.php')){
+            $q->set('orderby', 'menu_order');
+            $q->set('order', 'ASC');
+        }
     }
 
     function filter_search($query) {

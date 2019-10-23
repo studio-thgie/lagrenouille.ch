@@ -96,7 +96,7 @@
                 ?>
 
                     <div class="g-production__additional-block">
-                        <h3>
+                        <h3 class="g-foldable__title">
                             <?php the_sub_field('title'); ?>
                             <?php if(get_sub_field('foldable')): ?>
                                 <button type="button" class="g-button g-button-foldable">

@@ -88,9 +88,9 @@ document.addEventListener('click', function (evt) {
         document.querySelector('.g-nav').classList.toggle('g-nav--unfolded')
     }
 
-    if (evt.target.matches('.g-button-foldable')) {
-        evt.target.classList.toggle('g-button-foldable--open');
-        evt.target.parentNode.parentNode.querySelector('.production__additional-block__content').classList.toggle('production__additional-block__content--open')
+    if (evt.target.matches('.g-foldable__title')) {
+        evt.target.querySelector('.g-button-foldable').classList.toggle('g-button-foldable--open');
+        evt.target.parentNode.querySelector('.production__additional-block__content').classList.toggle('production__additional-block__content--open')
     }
 
 }, false);

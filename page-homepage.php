@@ -59,13 +59,18 @@
 
                     <article class="g-production-preview <?php echo ($count % 2 ? 'even' : 'odd');?>" data-effect="random-padding">
                         <a href="<?php the_permalink(); ?>" class="g-production-preview__article">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                <div class="g-production-preview__image">
+                                    <?php if ( get_field('age') ) : ?>
+                                        <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
+                                    <?php endif; ?>
+                                    <?php the_post_thumbnail( 'event-preview', array( 'class'  => 'g-production__image' ) ); ?>
+                                </div>
+                            <?php else: ?>
+
                             <?php if ( get_field('age') ) : ?>
                                 <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
                             <?php endif; ?>
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <div class="g-production-preview__image">
-                                    <?php the_post_thumbnail( 'event-preview', array( 'class'  => 'g-production__image' ) ); ?>
-                                </div>
                             <?php endif; ?>
                             <h2><?php the_title(); ?></h2>
                             <p class="g-production-preview__lead"><?php the_field('subtitle'); ?></p>
