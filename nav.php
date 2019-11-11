@@ -10,7 +10,9 @@
             <div>
                 <label class="screen-reader-text" for="s"><?php _e( 'search', 'grenouille' ); ?></label>
                 <input type="text" value="" name="q" id="q" placeholder="<?php _e( 'search', 'grenouille' ); ?>">
-                <input type="submit" id="searchsubmit" value="<?php _e( 'search', 'grenouille' ); ?>">
+                <button type="submit">
+                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/glass_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Search"/>
+                </button>
             </div>
         </form>
     </nav>

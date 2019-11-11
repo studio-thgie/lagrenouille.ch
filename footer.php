@@ -1,9 +1,18 @@
         <footer>
 
+        <div class="g-social">
+            <div class="g-social__media">
+                <a href="https://www.instagram.com/lagrenouille.bielbienne/" target="_blank">
+                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/insta_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Instagram"/>
+                </a>
+                <a href="https://www.facebook.com/lagrenouille.bielbienne/" target="_blank">
+                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/facebook_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Facebook"/>
+                </a>
+            </div>
+        </div>
+
         &copy; <?php echo date("Y"); ?> Théâtre de la Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
         
-        <?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
-
         </footer>
 
     </div>

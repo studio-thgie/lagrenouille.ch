@@ -855,6 +855,13 @@ footer ul li {
     margin-right: 20px;
 }
 
+.g-social__media {
+    text-align: right;
+}
+.g-social__media a {
+    margin-left: 20px;
+}
+
 .g-btn__mobile-nav {
     display: none;
 
@@ -926,10 +933,12 @@ input[type="email"] {
 }
 
 /* searchform */
-.menu-main-container {
+.menu-main-container,
+.menu-main-fr-container {
     margin-right: 10px;
 }
 .menu-main-container,
+.menu-main-fr-container,
 #searchform {
     display: inline-block;
 }
@@ -937,7 +946,7 @@ input[type="email"] {
     display: none;
 }
 #searchform #q {
-    border: 1px solid #efefef;
+    border: none;
     padding: 4px 8px;
     width: 110px;
 }
@@ -950,15 +959,29 @@ input[type="email"] {
 #searchform div {
     position: relative;
 }
-#searchform div:after {
-    position: absolute;
-    content: '\1F50D';
-    top: 2px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    pointer-events: none;
-    font-size: 1.5rem;
+#searchform button {
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    position: relative;
+    top: 7px;
+
+    cursor: pointer;
+}
+#searchform button img {
+    height: 100%;
+}
+
+.g-search > div {
+    border-bottom: 1px solid;
+}
+.g-search h3 {
+    margin: 20px 0;
+}
+.g-search a {
+    text-decoration: none !important;
 }
 
 /* typo only */
@@ -1135,6 +1158,9 @@ button.g-button.g-button-foldable img {
 
 /* responsive */
 @media (max-width: 960px) {
+    #searchform {
+        display: none;
+    }
     .g-production-preview {
         width: 100%;
     }

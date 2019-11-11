@@ -21,7 +21,19 @@
                     $loop = new WP_Query( $args );
                 ?>
 
-                <?php if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                <?php if ( $loop->have_posts() ) : ?>
+                    <div>
+                        <h3>
+                            <?php echo $loop->post_count; ?>
+                            <?php if($loop->post_count > 1): ?>
+                                <?php _e('entries', 'grenouille'); ?>
+                            <?php else: ?>
+                                <?php _e('entry', 'grenouille'); ?>
+                            <?php endif; ?> <span class="g-search__term"><?php echo $_GET['q']; ?></span>
+                        </h3>
+                    </div>
+                    
+                <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
                     <div>
                         <h3>
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
