@@ -31,6 +31,7 @@
             add_image_size( 'event-preview', 900, 9999 );
             add_image_size( 'header-slideshow', 1280, 500 );
             add_image_size( 'event-header', 1920, 9999 );
+            add_image_size( 'team-member', 378, 567 );
 
             /**
              * Enqueue those pesky sheets and scripts

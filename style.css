@@ -736,6 +736,60 @@ figcaption {
     width: 50px;
 }
 
+/* team */
+.g-team {
+    text-align: center;
+}
+.g-team-member {
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.g-team-member__meta-wrapper {
+    position: absolute;
+    bottom: 40px;
+    width: calc(100% - 40px);
+    left: 20px;
+}
+.g-team-member h2 {
+    color: #fff;
+    background:#ea5060;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+.g-team-member__meta {
+    background: #fff;
+    margin: 0;
+    padding: 20px 20px 40px;
+    font-size: 1.3em;
+    opacity: 0;
+    text-align: left;
+
+    transition: 0.25s;
+}
+.g-team-member:hover .g-team-member__meta {
+    opacity: 1;
+}
+.g-team-member__meta > span {
+    display: block;
+    margin-bottom: 10px;
+    color: #4F3244;
+}
+.g-team-member__meta > span a {
+    color: #4F3244;
+    text-decoration: none;
+}
+.g-team-member__meta-title {
+    font-size: 2.5em;
+}
+.g-team-member__meta > span.g-team-member__meta-function {
+    color: #ea5060;
+}
+
 /* shapes */
 .g-shape--left,
 .g-shape--right {
