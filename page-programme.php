@@ -122,6 +122,14 @@
                             <span class="g-programme__item-sold"><?php _e('sold', 'grenouille') ?></span>
                         <?php endif; ?>
 
+                        <?php if(get_field('brunch')): ?>
+                            <img class="g-programm_item-brunch" src="<?php echo get_theme_file_uri( 'assets/img/svg/Brunch_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Brunch"/>
+                        <?php endif; ?>
+
+                        <?php if(get_field('transport')): ?>
+                            <img class="g-programm_item-transport" src="<?php echo get_theme_file_uri( 'assets/img/svg/Transport_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Transport"/>
+                        <?php endif; ?>
+
                     </div>
                     <div class="g-programme__item-meta">
 

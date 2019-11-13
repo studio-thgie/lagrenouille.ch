@@ -327,6 +327,16 @@ figcaption {
     left: 150px;
     top: 0;
 }
+.g-programm_item-brunch {
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+}
+.g-programm_item-transport {
+	position: absolute;
+	bottom: 40px;
+	right: 20px;
+}
 .g-programme__item-info h3 {
     margin-top: 0;
 }
