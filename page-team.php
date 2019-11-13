@@ -10,17 +10,25 @@
 
 ?>
 
-        <main class="g-team">
+        <main>
 
-        <?php
-        
-            global $sitepress;
-            $loop = new WP_Query( array(
-                'post_type' => 'Member',
-                'posts_per_page' => -1
-            ) );
+        <article class="g-production__article">
+            <div class="g-production__description">
+                <?php the_content(); ?>
+            </div>
+        </article>
 
-        ?>
+        <div class="g-team">
+
+            <?php
+            
+                global $sitepress;
+                $loop = new WP_Query( array(
+                    'post_type' => 'Member',
+                    'posts_per_page' => -1
+                ) );
+
+            ?>
 
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             
@@ -46,6 +54,7 @@
                 </div>
 
             <?php endwhile; ?>
+        </div>
 
             <?php get_template_part( 'shapes' ); ?>
 

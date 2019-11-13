@@ -17,7 +17,7 @@ ready(function () {
                 })
                 break;
             case 'random-padding':
-                let padding = 1 + Math.random() * (window.innerWidth < 768 ? 3 : 8);
+                let padding = 1 + Math.random() * (window.innerWidth < 768 ? 1 : 8);
                 el.style.padding = padding + 'em';
                 break;
             case 'parallax':
@@ -86,6 +86,7 @@ document.addEventListener('click', function (evt) {
 
     if (evt.target.matches('.g-btn__mobile-nav')) {
         document.querySelector('.g-nav').classList.toggle('g-nav--unfolded')
+        document.querySelector('body').classList.toggle('g-nav--open')
     }
 
     if (evt.target.matches('.g-foldable__title')) {

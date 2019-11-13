@@ -127,51 +127,7 @@
                         ?>
 
                         <div class="g-next-events__item">
-                            <?php if(get_field('for_school')): ?>
-                            <?php else: ?><?php endif; ?>
-
-                            <?php 
-                                $date = strtotime(get_field('date_and_time'));
-                                $from = strtotime(get_field('time_start'));
-                                $until = strtotime(get_field('time_end'));
-                            ?>
-                            <p>
-                                <span class="g-next-events__item-date">
-                                    <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                        <?php echo date_i18n('d. m. Y', $date); ?><br>
-                                    <?php else: ?>
-                                        <?php echo date_i18n('d. m. Y', $date); ?><br>
-                                    <?php endif; ?>
-                                </span>
-
-                                    <?php echo date_i18n('l', $date); ?><br>
-
-                                    <?php if(get_field('time_start')): ?>
-                                    
-                                        <?php echo date_i18n('H:i', $from); ?> 
-
-                                        <?php if(get_field('time_end')): ?>
-                                            &nbsp;-&nbsp;<?php echo date_i18n('H:i', $until); ?> 
-                                        <?php endif; ?>
-                                        
-                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                            Uhr
-                                        <?php endif; ?>
-
-                                    <?php else: ?>
-
-                                        <?php echo date_i18n('H:i', $date); ?>
-
-                                        <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                                            Uhr
-                                        <?php endif; ?>
-
-                                    <?php endif; ?>
-
-                                    <br>
-
-                                    <?php the_field('city', $v->ID ); ?> 
-                            </p>
+                            <?php get_template_part( 'includes/show-date-mini' ); ?>
 
                             <?php if ( get_field('language', $p->ID) ) : ?>
 
@@ -186,13 +142,13 @@
                                 ?>
 
                                 <?php if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false): ?>
-                                    <img class="g-production__meta_lang--bi" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
+                                    <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
                                     <?php else: ?>
                                     <?php if( in_array( 'de', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang--de" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Deutsch"/>
+                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Deutsch"/>
                                     <?php endif; ?>
                                     <?php if( in_array( 'fr', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang--fr" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
+                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
                                     <?php endif; ?>
                                 <?php endif; ?>
                                 
@@ -204,8 +160,15 @@
 
                 <div class="g-production__more-meta-wrapper">
                     <?php if(get_field('genre')) : ?>
-                        <div class="g-production__genre" style="background-image: url(<?php echo get_theme_file_uri( 'assets/img/svg/genre-icon.svg' ); ?>);">
+                        <div class="g-production__genre" style="background-image: url(<?php echo get_theme_file_uri( 'assets/img/svg/genre-icon_'.$GLOBALS['color_scheme'].'.svg' ); ?>);">
                             <?php echo apply_filters('the_content', get_post_field('post_content', get_field('genre')->ID)); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if(get_field('download')) : ?>
+                        <div class="g-production__download">
+                            <a href="<?php the_field('download'); ?>">
+                                <img src="<?php echo get_theme_file_uri( 'assets/img/svg/Downloads_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="">
+                            </a>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -229,7 +192,7 @@
                             <?php the_sub_field('title'); ?>
                             <?php if(get_sub_field('foldable')): ?>
                                 <button type="button" class="g-button g-button-foldable">
-                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/foldable-arrow.svg' ); ?>" alt="Fold block">
+                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/foldable-arrow_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block">
                                 </button>
                             <?php endif; ?>
                         </h3>
