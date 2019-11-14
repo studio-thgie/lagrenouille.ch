@@ -107,16 +107,6 @@
 
                     ?>
 
-                    <?php if($loop->have_posts()): ?>
-                        <div class="g-next-events__item">
-                            <p>
-                                <span class="g-next-events__title">
-                                    <?php _e( 'next_events', 'grenouille' ); ?>
-                                </span>
-                            </p>
-                        </div>
-                    <?php endif; ?>
-
                     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
                         <?php 
@@ -155,6 +145,27 @@
                             <?php endif; ?>
                         </div>
                     <?php endwhile; wp_reset_query(); ?>
+
+                    <?php if($loop->have_posts()): ?>
+
+                        <?php 
+
+                            if(ICL_LANGUAGE_CODE == 'fr') {
+                                $agenda = '/fr/calendrier';
+                            } else {
+                                $agenda = '/spielplan';
+                            }
+
+                        ?>
+
+                        <div class="g-next-events__item">
+                            <p>
+                                <a href="<?php echo $agenda; ?>" class="g-next-events__title">
+                                    <?php _e( 'next_events', 'grenouille' ); ?>
+                                </a>
+                            </p>
+                        </div>
+                    <?php endif; ?>
 
                 </div>
 

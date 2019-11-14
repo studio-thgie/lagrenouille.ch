@@ -619,6 +619,10 @@ figcaption {
     transform: rotate(11deg);
 }
 
+.g-next-events__item a {
+    text-decoration:  !important;
+}
+
 .g-production__description img {
     max-width: 600px;
     height: auto;
