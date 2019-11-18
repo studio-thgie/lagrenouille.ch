@@ -2,7 +2,7 @@
 
     /*
 
-    Template Name: Homepage
+    Template Name: Tuiles
     
     */
 
@@ -14,6 +14,7 @@
 
 ?>
 
+        <?php if(is_null(get_field('show_subpages'))): ?>
         <style>
             .g-logo span {
                 width: 700px;
@@ -25,6 +26,7 @@
                 }
             }
         </style>
+        <?php endif; ?>
 
         <main>
 
@@ -34,7 +36,13 @@
             </a>
             <?php endif; ?>
 
-            <section aria-label="Vorschau der nächsten Produktionen" class="g-production-preview__wrapper">
+            <article class="g-production__article">
+                <div class="g-production__description <?php if ( get_field('one_column') ) { echo 'g-one-col'; } ?>">
+                    <?php the_content(); ?>
+                </div>
+            </article>
+
+            <section aria-label="Vorschau Produktionen und Unterseiten" class="g-production-preview__wrapper">
 
             <?php
                 $query = array(
@@ -52,7 +60,18 @@
                     );
                 }
 
+                if(!is_null(get_field('show_subpages'))){
+                    $query = array(
+                        'post_type'      => 'page',
+                        'posts_per_page' => -1,
+                        'post_parent'    => $post->ID,
+                        'order'          => 'ASC',
+                        'orderby'        => 'menu_order'
+                     );
+                }
+                
                 $loop = new WP_Query( $query );
+
             ?>
 
                 <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); $count++; ?>

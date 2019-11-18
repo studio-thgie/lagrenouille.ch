@@ -5,7 +5,8 @@
 ?>
 <?php if(get_field('for_school')): ?>
     <img src="<?php echo get_theme_file_uri( 'assets/img/svg/School_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block">
-<?php else: ?>
+<?php endif; ?>
+<?php if(false): ?>
     <?php if(get_field('event_category', $p->ID)): ?>
         <img src="<?php echo get_theme_file_uri( 'assets/img/svg/'.get_field('event_category', $p->ID).'_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Kategorie">
     <?php endif; ?>
