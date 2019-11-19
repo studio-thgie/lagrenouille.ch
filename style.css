@@ -600,8 +600,8 @@ figcaption {
 
     transform: rotate(-7deg);
 }
-.g-next-events__item:first-child {
-    width: 150px;
+.g-next-events__item span {
+    display: block;
 }
 .g-next-events__item-date {
     font-size: 1.1em;
@@ -1325,27 +1325,33 @@ button.g-button.g-button-foldable img {
     .g-nav li {
         display: block !important;
         text-align: right;
-        padding-right: 20px;
     }
 
-    .g-nav li:first-child {
-        padding-top: 60px;
+    .g-nav ul.menu > li + li {
+        margin: 0;
     }
 
-    .g-nav li:last-child {
-        padding-bottom: 60px;
+    .g-nav ul.menu > li {
+        display: inline-block;
+        border-bottom: 1px solid #DDDE41;
+        text-align: left;
+        padding: 10px 20px;
+        font-size: 2em;
+    }
+    .g-nav ul.sub-menu {
+        padding: 0;
+    }
+    .g-nav ul.sub-menu > li {
+        text-align: left;
+        font-size: 0.5em;
+    }
+
+    .g-nav ul.menu > li:last-child {
+        margin-bottom: 60px;
     }
 
     .g-nav li a {
-        opacity: 0;
         color: #fff;
-
-        -webkit-transition: 0.75s;
-        transition: 0.75s;
-    }
-
-    .g-nav.g-nav--unfolded li a {
-        opacity: 1;
     }
 
     .g-nav ul.sub-menu {
@@ -1502,9 +1508,34 @@ button.g-button.g-button-foldable img {
     .g-production__meta-wrapper .g-production__meta_lang--fr {
         width: 100px;
     }
+
+    .g-programme__item {
+        display: block;
+    }
+    .g-programme__item-date,
+    .g-programme__item-meta {
+        width: 100%;
+    }
+    .g-programme__item-meta {
+        display: flex;
+    }
+    .g-programme__item-meta .g-production__meta_lang,
+    .g-programme__item-meta .g-production__meta-age,
+    .g-programme__item-meta .g-production__meta-duration  {
+        position: static;
+        margin: 0 20px;
+    }
+    .g-programme__item-meta .g-production__meta-duration {
+        position: relative;
+        top: -40px;
+    }
 }
 
 @media (max-width: 560px) {
+
+    .g-wrapper > header, .g-wrapper > main {
+        padding: 0 10px;
+    }
 
     .g-production-preview__list-item header h2,
     .g-production-preview__list-item header p {
@@ -1515,5 +1546,26 @@ button.g-button.g-button-foldable img {
         float: none;
         text-align: right;
         width: 100%;
+    }
+    .g-next-events__item {
+        transform: rotate(0);
+        width: 100%;
+    }
+    .g-next-events__item-date {
+        font-size: 1.5em;
+    }
+    .g-next-events__item-date p {
+        margin: 0;
+    }
+    .g-next-events__item-time {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .g-programme__item-meta {
+        display: none;
+    }
+    .g-programme__item-reservation, .g-programme__item-sold {
+        position: static;
     }
 }

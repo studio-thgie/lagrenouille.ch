@@ -20,37 +20,47 @@
 <p>
     <span class="g-next-events__item-date">
         <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-            <?php echo date_i18n('d. m. Y', $date); ?><br>
+            <?php echo date_i18n('d.m.Y', $date); ?>
         <?php else: ?>
-            <?php echo date_i18n('d. m. Y', $date); ?><br>
+            <?php echo date_i18n('d.m.Y', $date); ?>
         <?php endif; ?>
     </span>
 
-        <?php echo date_i18n('l', $date); ?><br>
+    <span class="g-next-events__item-time">
+
+        <span><?php echo date_i18n('l', $date); ?></span>
 
         <?php if(get_field('time_start')): ?>
         
-            <?php echo date_i18n('H:i', $from); ?> 
+            <span>
 
-            <?php if(get_field('time_end')): ?>
-                &nbsp;-&nbsp;<?php echo date_i18n('H:i', $until); ?> 
-            <?php endif; ?>
-            
-            <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                Uhr
-            <?php endif; ?>
+                <?php echo date_i18n('H:i', $from); ?> 
+
+                <?php if(get_field('time_end')): ?>
+                    &nbsp;-&nbsp;<?php echo date_i18n('H:i', $until); ?> 
+                <?php endif; ?>
+                
+                <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
+                    Uhr
+                <?php endif; ?>
+
+            </span>
 
         <?php else: ?>
 
-            <?php echo date_i18n('H:i', $date); ?>
+            <span>
 
-            <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
-                Uhr
-            <?php endif; ?>
+                <?php echo date_i18n('H:i', $date); ?>
+
+                <?php if(ICL_LANGUAGE_CODE == 'de'): ?>
+                    Uhr
+                <?php endif; ?>
+
+            </span>
 
         <?php endif; ?>
 
-        <br>
+    </span>
 
         <?php the_field('city', $v->ID ); ?> 
 </p>
