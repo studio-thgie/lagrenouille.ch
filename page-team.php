@@ -33,7 +33,11 @@
             <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             
                 <div class="g-team-member">
-                    <?php the_post_thumbnail( 'event-preview', array( 'class'  => 'team-member' ) ); ?>
+                <?php if(has_post_thumbnail): ?>
+                    <?php the_post_thumbnail( 'team-member', array( 'class'  => 'team-member' ) ); ?>
+                <?php else: ?>
+                    <div class="g-team-member__no-pic"></div>
+                <?php endif; ?>
                     <div class="g-team-member__meta-wrapper">
                         <p class="g-team-member__meta">
                             <?php if(get_field('title')): ?><span class="g-team-member__meta-title">

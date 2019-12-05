@@ -50,6 +50,11 @@ ready(function () {
         }
     }, 250);
 
+    $('input[type="radio"]').on('click change', function(e) {
+        $('.g-newsletter-form').addClass('hide');
+        $('.g-newsletter-form__'+$('input[type="radio"]:checked').val()).removeClass('hide')
+    });
+
 });
 
 jQuery(window).bind('load', function () {
