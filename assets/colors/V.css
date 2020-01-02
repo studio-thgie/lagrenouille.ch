@@ -28,6 +28,11 @@ a,
 a:hover {
     color: #EA5060;
 }
+a.g_espace-downloads-file,
+a.g-espace-preview {
+    background-color: #DDDE41;
+    color: #4F3244;
+}
 
 .g-nav {
     background-color: #4F3244;
