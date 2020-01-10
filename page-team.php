@@ -25,7 +25,9 @@
                 global $sitepress;
                 $loop = new WP_Query( array(
                     'post_type' => 'Member',
-                    'posts_per_page' => -1
+                    'posts_per_page' => -1,
+                    'order'          => 'ASC',
+                    'orderby'        => 'menu_order'
                 ) );
 
             ?>
