@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        &copy; <?php echo date("Y"); ?> Théâtre de la Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
+        &copy; <?php echo date("Y"); ?> La Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
         
         </footer>
 

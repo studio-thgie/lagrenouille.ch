@@ -23,13 +23,13 @@ p.g-production-subtitle {
 a:hover {
     color: #DDDE41;
 }
-a.g_espace-downloads-file,
+a.g-espace-downloads-file,
 a.g-espace-preview {
     background-color: #4F3244;
     color: #EA5060;
 }
 
-a.g_espace-downloads-file:hover,
+a.g-espace-downloads-file:hover,
 a.g-espace-preview:hover {
     color: white;
 }
