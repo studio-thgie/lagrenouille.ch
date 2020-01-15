@@ -2,7 +2,7 @@
 
     /*
 
-    Template Name: Tuiles
+    Template Name: Homepage
     
     */
 
