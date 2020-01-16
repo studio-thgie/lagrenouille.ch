@@ -58,9 +58,17 @@
                             'value'			=> get_field('filter_productions'),
                         ),
                     );
+                } else {
+                    $query['meta_query'] = array(
+                        array(
+                            'key'			=> 'event_category',
+                            'compare'		=> 'NOT LIKE',
+                            'value'			=> 'archiv',
+                        ),
+                    );
                 }
 
-                if(!is_null(get_field('show_subpages'))){
+                if(get_field('show_subpages')){
                     $query = array(
                         'post_type'      => 'page',
                         'posts_per_page' => -1,
