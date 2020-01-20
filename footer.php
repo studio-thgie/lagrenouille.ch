@@ -1,5 +1,24 @@
         <footer>
 
+        <div class="g-footer-newsletter">
+
+            <?php
+
+                $newsletter_form = (ICL_LANGUAGE_CODE == 'de') ? '/newsletter' : '/fr/newsletter';
+
+            ?>
+
+            <form action="<?php echo $newsletter_form; ?>" method="post" novalidate>
+                <div id="mc_embed_signup_scroll">
+                    <div class="mc-field-group">
+                        <input type="email" value="" name="footer-newsletter-email" class="required email" id="footer-newsletter-" placeholder="Newsletter">
+                    </div>
+                        <input type="submit" value="Subscribe" name="subscribe"
+                            id="mc-embedded-subscribe" class="button">
+                </div>
+            </form>
+        </div>
+
         <div class="g-social">
             <div class="g-social__media">
                 <a href="https://www.instagram.com/lagrenouille.bielbienne/" target="_blank">
@@ -11,7 +30,7 @@
             </div>
         </div>
 
-        &copy; <?php echo date("Y"); ?> Théâtre de la Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
+        &copy; <?php echo date("Y"); ?> La Grenouille &mdash; <a href="http://sifon.li/" target="_blank"/>SIFON</a> &mdash; <a href="http://www.atelyeah.com/" target="_blank"/>Atelyeah</a>
         
         </footer>
 
