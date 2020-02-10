@@ -39,16 +39,16 @@
                 target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll">
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                        <label for="mce-EMAIL">Email Adresse <span class="asterisk">*</span>
                         </label>
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name </label>
+                        <label for="mce-FNAME">Vorname </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name </label>
+                        <label for="mce-LNAME">Nachname </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -77,16 +77,16 @@
                 <div id="mc_embed_signup_scroll">
 
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                        <label for="mce-EMAIL">Adresse e-mail <span class="asterisk">*</span>
                         </label>
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name </label>
+                        <label for="mce-FNAME">Prénom </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name </label>
+                        <label for="mce-LNAME">Nom </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -115,16 +115,16 @@
                 <div id="mc_embed_signup_scroll">
 
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                        <label for="mce-EMAIL">Email Adresse <span class="asterisk">*</span>
                         </label>
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name </label>
+                        <label for="mce-FNAME">Vorname </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name </label>
+                        <label for="mce-LNAME">Nachname </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -153,16 +153,16 @@
                 <div id="mc_embed_signup_scroll">
 
                     <div class="mc-field-group">
-                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                        <label for="mce-EMAIL">Adresse e-mail <span class="asterisk">*</span>
                         </label>
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">First Name </label>
+                        <label for="mce-FNAME">Prénom </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Last Name </label>
+                        <label for="mce-LNAME">Nom </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div id="mce-responses" class="clear">

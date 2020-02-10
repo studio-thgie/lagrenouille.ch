@@ -13,8 +13,30 @@
         <main class="g-programme">
 
         <?php
-        
-            $loop = new WP_Query( array(
+
+            $field_key = "field_5d5d84522b866";
+            $field = get_field_object($field_key);
+
+            if( $field ) {
+                echo '<div class="g-programme__categories"><select id="categories" name="categories" class="categories" autocomplete="off">';
+
+                echo '<option value="all">';
+                _e( 'all', 'grenouille' );
+                echo '</option>';
+
+                foreach( $field['choices'] as $k => $v ) {
+                    echo '<option value="' . $k . '"';
+
+                    if ( $k == $_GET['category'] ) {
+                        echo ' selected';
+                    }
+                    echo '>' . $v . '</option>';
+                }
+
+                echo '</select></div>';
+            }
+
+            $query = array(
                 'post_type' => 'Events',
                 'posts_per_page' => -1,
                 'meta_query' 		=> array(
@@ -29,7 +51,9 @@
                 'orderby'			=> 'meta_value',
                 'meta_key'			=> 'date_and_time',
                 'meta_type'			=> 'DATE'
-            ) );
+            );
+        
+            $loop = new WP_Query( $query );
 
         ?>
 
@@ -39,6 +63,12 @@
 
                     $p = get_field('production');
                     $v = get_field('venue');
+
+                    if(isset($_GET['category'])){
+                        if(get_field('event_category', $p->ID) !== $_GET['category'] && $_GET['category'] != 'all'){
+                            continue;
+                        }
+                    }
                 
                 ?>
             

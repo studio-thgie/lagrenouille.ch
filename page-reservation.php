@@ -84,15 +84,15 @@
                             <?php endif; ?>
                             <div class="g-production-preview__list-item__school" data-effect="random-rotate">
                                 <div>
-                                    <h3><?php if(get_field('for_school')): ?>
+                                    <h3><?php if(get_field('for_school', $event->ID)): ?>
                                     
                                     <?php _e( 'school', 'grenouille' ); ?>
                                     
                                     <?php else: ?>&nbsp;<?php endif; ?></h3>
                                     <?php 
-                                        $date = strtotime(get_field('date_and_time'));
-                                        $from = strtotime(get_field('time_start'));
-                                        $until = strtotime(get_field('time_end'));
+                                        $date = strtotime(get_field('date_and_time', $event->ID));
+                                        $from = strtotime(get_field('time_start', $event->ID));
+                                        $until = strtotime(get_field('time_end', $event->ID));
                                     ?>
                                     <p>
                                         <?php echo date_i18n('l', $date); ?><br>

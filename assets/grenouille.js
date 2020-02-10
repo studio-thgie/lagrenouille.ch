@@ -101,6 +101,14 @@ document.addEventListener('click', function (evt) {
 
 }, false);
 
+document.addEventListener('change', function (evt) {
+
+    if (evt.target.matches('.g-programme__categories .categories')) {
+		window.location = '?category='+document.querySelectorAll('.g-programme__categories .categories option:checked')[0].value
+    }
+
+}, false);
+
 /* basics */
 function ready(fn) {
     if (document.readyState != 'loading') {

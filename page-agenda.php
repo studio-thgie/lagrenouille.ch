@@ -13,6 +13,26 @@
         <main class="g-production-preview__list">
 
         <?php
+
+            $field_key = "field_5d5d84522b866";
+            $field = get_field_object($field_key);
+
+            if( $field ) {
+                echo '<select id="categories" name="categories" class="categories" autocomplete="off">';
+
+                echo '<option value="-1">' . _e( 'all', 'grenouille' ) . '</option>';
+
+                foreach( $field['choices'] as $k => $v ) {
+                    echo '<option value="' . $k . '"';
+
+                    if ( $k == $_GET['category'] ) {
+                        echo ' selected';
+                    }
+                    echo '>' . $v . '</option>';
+                }
+
+                echo '</select>';
+            }
         
             global $sitepress;
             $loop = new WP_Query( array(
