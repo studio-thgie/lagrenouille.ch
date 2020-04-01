@@ -51,13 +51,25 @@
                     ?>
                         <div class="g-espace-downloads-category">
                             <h3><?php the_sub_field('title'); ?></h3>
+                            
+                            <?php
+								if(get_sub_field('preview')){
+									$preview = true;
+								} else {
+									$preview = false;
+								}
+							?>
+
                             <?php
                                 if( have_rows('files') ):
                                     while ( have_rows('files') ) : the_row();
                             ?>
                                 <a class="g-espace-downloads-file" href="<?php echo get_sub_field('file')['url'] ?>" target="_blank">
-                                    <?php the_sub_field('title'); ?>
-                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/download_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block">
+									<?php if($preview): ?>
+										<img src="<?php echo get_sub_field('file')['sizes']['downloads']; ?>" class="g-espace-downloads-file-preview"/>
+									<?php endif; ?>
+                                    <span><?php the_sub_field('title'); ?></span>
+                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/download_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block"  class="g-espace-downloads-icon">
                                 </a>
                                 <?php ; ?>
                             <?php

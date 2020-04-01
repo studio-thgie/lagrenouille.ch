@@ -1332,11 +1332,19 @@ a.g-espace-preview {
     font-weight: 100;
     margin-top: 10px;
 }
-a.g-espace-downloads-file img {
+.g-espace-downloads-icon  {
     position: absolute;
     top: 5px;
     right: 10px;
     height: 30px;
+}
+.g-espace-downloads-file-preview {
+
+    position: static !important;
+    display: block;
+    max-width: 300px;
+    height: auto !important;
+
 }
 a.g-espace-preview {
     max-width: none;

@@ -32,6 +32,7 @@
             add_image_size( 'header-slideshow', 1280, 500 );
             add_image_size( 'event-header', 1920, 9999 );
             add_image_size( 'team-member', 378, 567 );
+            add_image_size( 'downloads', 600, 600 );
 
             /**
              * Enqueue those pesky sheets and scripts
