@@ -64,9 +64,9 @@
                                 if( have_rows('files') ):
                                     while ( have_rows('files') ) : the_row();
                             ?>
-                                <a class="g-espace-downloads-file" href="<?php echo get_sub_field('file')['url'] ?>" target="_blank">
+                                <a class="g-espace-downloads-file<?php if($preview): ?> g-espace-downloads-preview<?php endif; ?>" href="<?php echo get_sub_field('file')['url'] ?>" target="_blank">
 									<?php if($preview): ?>
-										<img src="<?php echo get_sub_field('file')['sizes']['downloads']; ?>" class="g-espace-downloads-file-preview"/>
+										<img src="<?php echo get_sub_field('file')['sizes']['event-preview']; ?>" class="g-espace-downloads-file-preview"/>
 									<?php endif; ?>
                                     <span><?php the_sub_field('title'); ?></span>
                                     <img src="<?php echo get_theme_file_uri( 'assets/img/svg/download_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block"  class="g-espace-downloads-icon">
