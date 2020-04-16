@@ -322,8 +322,12 @@ figcaption {
     text-align: right;
     margin-bottom: 20px;
 }
-.g-programme__categories .categories {
+.g-programme__categories select {
     font-size: 2rem;
+    margin-left: 20px;
+}
+.g-programme__categories-label {
+    font-size: 20px;
 }
 .g-programme__item {
     position: relative;

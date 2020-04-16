@@ -14,11 +14,17 @@
 
         <?php
 
+            echo '<div class="g-programme__categories">';
+
+            echo '<span class="g-programme__categories-label">';
+            _e('filter', 'grenouille');
+            echo '</span>';
+            
             $field_key = "field_5d5d84522b866";
             $field = get_field_object($field_key);
 
             if( $field ) {
-                echo '<div class="g-programme__categories"><select id="categories" name="categories" class="categories" autocomplete="off">';
+                echo '<select id="categories" name="categories" class="categories" autocomplete="off">';
 
                 echo '<option value="all">';
                 _e( 'all', 'grenouille' );
@@ -33,8 +39,29 @@
                     echo '>' . $v . '</option>';
                 }
 
-                echo '</select></div>';
+                echo '</select>';
             }
+
+            $query = array(
+                'post_type' => 'Saison',
+                'posts_per_page' => -1,
+            );
+        
+            $loop = new WP_Query( $query );
+
+            if( $loop->have_posts() ){
+                echo '<select id="saison" name="saison" class="saison" autocomplete="off">';
+                echo '<option value="all">Saison</option>';
+                while ( $loop->have_posts() ) {
+                    $loop->the_post();
+                    echo '<option value="'.get_the_ID().'">'.get_the_title().'</option>';
+                }
+                echo '</select>';
+            }
+
+            wp_reset_query();
+
+            echo '</div>';
 
             $query = array(
                 'post_type' => 'Events',
@@ -52,7 +79,24 @@
                 'meta_key'			=> 'date_and_time',
                 'meta_type'			=> 'DATE'
             );
-        
+
+            if(isset($_GET['quand'])) {
+                $query['meta_query'] = array(
+                    array(
+                        'key'			=> 'date_and_time',
+                        'compare'		=> '>=',
+                        'value'			=> date('Y-m-d H:i:s', strtotime(get_field('from', $_GET['quand']))),
+                        'type'			=> 'DATETIME'
+                    ),
+                    array(
+                        'key'			=> 'date_and_time',
+                        'compare'		=> '<=',
+                        'value'			=> date('Y-m-d H:i:s', strtotime(get_field('to', $_GET['quand']))),
+                        'type'			=> 'DATETIME'
+                    ),
+                );
+            }
+
             $loop = new WP_Query( $query );
 
         ?>

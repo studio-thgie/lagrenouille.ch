@@ -55,6 +55,8 @@ ready(function () {
         $('.g-newsletter-form__'+$('input[type="radio"]:checked').val()).removeClass('hide')
     });
 
+    $('.production__additional-block__content p').fitVids();
+
 });
 
 jQuery(window).bind('load', function () {
@@ -105,6 +107,10 @@ document.addEventListener('change', function (evt) {
 
     if (evt.target.matches('.g-programme__categories .categories')) {
 		window.location = '?category='+document.querySelectorAll('.g-programme__categories .categories option:checked')[0].value
+    }
+
+    if (evt.target.matches('.g-programme__categories .saison')) {
+		window.location = '?quand='+document.querySelectorAll('.g-programme__categories .saison option:checked')[0].value
     }
 
 }, false);
