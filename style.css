@@ -357,6 +357,18 @@ figcaption {
     bottom: 40px;
     right: 20px;
 }
+.g-programm_item-atelier {
+    width: 40px;
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+}
+.g-programm_item-backstage {
+    width: 40px;
+    position: absolute;
+    bottom: 50px;
+    right: 70px;
+}
 
 .g-programme__item-info h3 {
     margin-top: 0;

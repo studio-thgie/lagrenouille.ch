@@ -193,6 +193,14 @@
                             <img class="g-programm_item-transport" src="<?php echo get_theme_file_uri( 'assets/img/svg/Transport_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Transport"/>
                         <?php endif; ?>
 
+                        <?php if(get_field('atelier')): ?>
+                            <img class="g-programm_item-atelier" src="<?php echo get_theme_file_uri( 'assets/img/svg/Atelier_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Atelier"/>
+                        <?php endif; ?>
+
+                        <?php if(get_field('backstage')): ?>
+                            <img class="g-programm_item-backstage" src="<?php echo get_theme_file_uri( 'assets/img/svg/Backstage_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Backstage"/>
+                        <?php endif; ?>
+
                     </div>
                     <div class="g-programme__item-meta">
 
