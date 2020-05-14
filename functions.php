@@ -57,9 +57,13 @@
      * Flus JSON generation
      */
     add_action('rest_api_init', function () {
-    register_rest_route( 'grenouille/v1', 'events',array(
+        register_rest_route( 'grenouille/v1', 'events',array(
             'methods'  => 'GET',
             'callback' => 'get_events'
+        ));
+        register_rest_route( 'grenouille/v2', 'events',array(
+            'methods'  => 'GET',
+            'callback' => 'get_events_v2'
         ));
     });
       
@@ -127,7 +131,100 @@
     
         return $response;
     }
+
+    function get_events_v2($request) {
+
+        global $sitepress;
+        $sitepress->switch_lang('fr');
+
+        $events_raw = new WP_Query( array(
+            'post_type' => 'Events',
+            'posts_per_page' => -1,
+            'meta_query' 		=> array(
+                array(
+                    'key'			=> 'date_and_time',
+                    'compare'		=> '>=',
+                    'value'			=> date('Y-m-d H:i:s'),
+                    'type'			=> 'DATETIME'
+                ),
+            ),
+            'order'				=> 'ASC',
+            'orderby'			=> 'meta_value',
+            'meta_key'			=> 'date_and_time',
+            'meta_type'			=> 'DATE'
+        ) );
+        $events = [];
+
+        if (empty($events_raw)) {
+            return new WP_Error( 'no_events', 'no events found', array('status' => 404) );
+        }
+
+        while ( $events_raw->have_posts() ) {
+            $events_raw->the_post();
+
+            $p = get_field('production');
+            $v = get_field('venue');
+            $date = strtotime(get_field('date_and_time'));
+
+            $event = [
+                'event_id' => get_the_ID(),
+                'event_title' => get_the_title( $p->ID ),
+                'event_subtitle' => get_field('subtitle', $p->ID),
+				'event_description' => get_the_content(null, false, $p->ID),
+                'event_duration' => get_field('duration', $p->ID),
+                'event_age' => get_field('age', $p->ID),
+                'event_dates' => [
+					[
+						'start_date' => date_i18n('Y-m-d H:i', $date)
+					]
+                ],
+                'event_categories' => ['TH'],
+                'event_status' => 'PUBLIC',
+                'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
+                'detail_url' => get_permalink( $p->ID ),
+                'venue_name' => get_the_title( $v->ID ),
+                'venue_address' => get_field('street', $v->ID ),
+                'venue_zip' => get_field('zip', $v->ID ),
+                'venue_city' => get_field('city', $v->ID )
+            ];
+
+            $p_d = icl_object_id($p->ID, 'productions', false, 'de');
+
+            $event['event_title_d'] = get_the_title( $p_d );
+            $event['event_subtitle_d'] = get_field('subtitle', $p_d);
+            $event['event_description_d'] = get_the_content(null, false, $p_d);
+            $event['detail_url_d'] = get_permalink( $p_d );
+
+            $reservation = false;
+        
+            if(!is_null(get_field('reservation_activated'))){
+                $reservation = get_field('reservation_activated');
+            }
+
+            if($reservation) {
+                if(get_field('reservation_extern') != ''){
+                    $link_d = get_field('reservation_extern');
+                    $link_f = $link_d;
+                } else {
+                    $link_d = 'https://lagrenouille.ch/de/reservation?id=' . get_the_ID();
+                    $link_f = 'https://lagrenouille.ch/fr/reservation?id=' . get_the_ID();
+                }
+            }
+
+            $event['booking_url_d'] = $link_d;
+            $event['booking_url_f'] = $link_f;
+
+            $events[] = $event;
+        }
     
+        $response = new WP_REST_Response(array(
+            'api_key' => 'CS-CFfm9zLTcY',
+            'events'  => $events
+        ));
+        $response->set_status(200);
+    
+        return $response;
+    }
 
 	add_action('parse_query', 'pmg_ex_sort_posts');
 	/**
