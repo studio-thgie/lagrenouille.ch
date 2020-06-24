@@ -14,7 +14,12 @@
 
         <?php
 
-            $field_key = "field_5d5d84522b866";
+            if(ICL_LANGUAGE_CODE == 'de'){
+                $field_key = "field_5d5d84522b866";
+            } else {
+                $field_key = "field_5d5d84e72cb5b";
+            }
+
             $field = get_field_object($field_key);
 
             if( $field ) {

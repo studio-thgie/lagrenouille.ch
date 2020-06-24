@@ -20,7 +20,13 @@
             _e('filter', 'grenouille');
             echo '</span>';
             
-            $field_key = "field_5d5d84522b866";
+
+            if(ICL_LANGUAGE_CODE == 'de'){
+                $field_key = "field_5d5d84522b866";
+            } else {
+                $field_key = "field_5d5d84e72cb5b";
+            }
+            
             $field = get_field_object($field_key);
 
             if( $field ) {
@@ -38,6 +44,16 @@
                     }
                     echo '>' . $v . '</option>';
                 }
+
+                echo '<option value="school"';
+
+                if ( 'school' == $_GET['category'] ) {
+                    echo ' selected';
+                }
+                echo '>';
+
+                _e( 'school', 'grenouille' );
+                echo '</option>';
 
                 echo '</select>';
             }
@@ -109,8 +125,15 @@
                     $v = get_field('venue');
 
                     if(isset($_GET['category'])){
-                        if(get_field('event_category', $p->ID) !== $_GET['category'] && $_GET['category'] != 'all'){
-                            continue;
+                        if($_GET['category'] != 'school'){
+                            if(get_field('event_category', $p->ID) !== $_GET['category'] && $_GET['category'] != 'all'){
+                                continue;
+                            }
+                        }
+                        if($_GET['category'] == 'school'){
+                            if(!get_field('for_school')) {
+                                continue;
+                            }
                         }
                     }
                 
