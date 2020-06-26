@@ -188,6 +188,23 @@
                 'venue_city' => get_field('city', $v->ID )
             ];
 
+            if(get_field('override_language')) {
+                $lang = get_field('override_language');
+            } else {
+                $lang = get_field('language', $p->ID);
+            }
+
+            if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
+                $event['event_lang'] = 'fr/de';
+            } else {
+                if( in_array( 'de', $lang ) !== false) {
+                    $event['event_lang'] = 'de';
+                }
+                if( in_array( 'fr', $lang ) !== false) {
+                    $event['event_lang'] = 'fr';
+                }
+            }
+
             $p_d = icl_object_id($p->ID, 'productions', false, 'de');
 
             $event['event_title_d'] = get_the_title( $p_d );
