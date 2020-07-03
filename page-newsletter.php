@@ -51,6 +51,10 @@
                         <label for="mce-LNAME">Nachname </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
+                    <div class="mc-field-group">
+                        <label for="mce-PHONE">Telefon </label>
+                        <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
+                    </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
                         <div class="response" id="mce-success-response" style="display:none"></div>
@@ -88,6 +92,10 @@
                     <div class="mc-field-group">
                         <label for="mce-LNAME">Nom </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-PHONE">Téléphone </label>
+                        <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
@@ -127,6 +135,18 @@
                         <label for="mce-LNAME">Nachname </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
+                    <div class="mc-field-group">
+                        <label for="mce-PHONE">Telefon </label>
+                        <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-TYPE">Bitte präzisieren: Anmeldung für Schule oder Veranstalter.in </label>
+                        <select name="TYPE" class="" id="mce-TYPE">
+                            <option value=""></option>
+                            <option value="Veranstalter">Veranstalter.in</option>
+                            <option value="Schule">Schule</option>
+                        </select>
+                    </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
                         <div class="response" id="mce-success-response" style="display:none"></div>
@@ -164,6 +184,18 @@
                     <div class="mc-field-group">
                         <label for="mce-LNAME">Nom </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-PHONE">Téléphone </label>
+                        <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
+                    </div>
+                    <div class="mc-field-group">
+                        <label for="mce-TYPE">veuillez svp préciser si vous êtes une école ou un.e organisateur.trice </label>
+                        <select name="TYPE" class="" id="mce-TYPE">
+                            <option value=""></option>
+                            <option value="Veranstalter">organisateur.trice</option>
+                            <option value="Schule">école</option>
+                        </select>
                     </div>
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>

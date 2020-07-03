@@ -1138,7 +1138,8 @@ input[type="email"] {
     display: block;
 }
 
-.mc-field-group input {
+.mc-field-group input,
+.mc-field-group select {
     background: #f7f7f7;
     border: 1px solid #c4c4c4;
     border-radius: 0;
@@ -1152,7 +1153,11 @@ input[type="email"] {
     width: 100%;
 }
 .mc-field-group input[type="radio"] {
-    width: 50px;
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: -14px;
+    margin-right: 10px;
 }
 
 #mc-embedded-subscribe {
@@ -1356,6 +1361,9 @@ a.g-espace-downloads-preview {
     top: 10px;
     right: 10px;
     height: 30px;
+}
+.g-espace-downloads-icon.g-espace-link-icon {
+    transform: rotate(-90deg);
 }
 a.g-espace-downloads-preview .g-espace-downloads-icon {
     top: 20px;

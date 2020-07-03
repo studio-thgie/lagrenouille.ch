@@ -63,7 +63,9 @@
                             <?php
                                 if( have_rows('files') ):
                                     while ( have_rows('files') ) : the_row();
+                                        if( get_sub_field('file') ):
                             ?>
+
                                 <a class="g-espace-downloads-file<?php if($preview): ?> g-espace-downloads-preview<?php endif; ?>" href="<?php echo get_sub_field('file')['url'] ?>" target="_blank">
 									<?php if($preview): ?>
 										<img src="<?php echo get_sub_field('file')['sizes']['event-preview']; ?>" class="g-espace-downloads-file-preview"/>
@@ -71,10 +73,20 @@
                                     <span><?php the_sub_field('title'); ?></span>
                                     <img src="<?php echo get_theme_file_uri( 'assets/img/svg/download_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block"  class="g-espace-downloads-icon">
                                 </a>
-                                <?php ; ?>
+
                             <?php
-                                    endwhile; 
-                                endif; 
+                                        elseif(get_sub_field('link')):
+                            ?>
+
+                                <a class="g-espace-downloads-file" href="<?php the_sub_field('link') ?>" target="_blank">
+                                    <span><?php the_sub_field('title'); ?></span>
+                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/download_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block"  class="g-espace-downloads-icon g-espace-link-icon">
+                                </a>
+
+                            <?php
+                                        endif;
+                                    endwhile;
+                                endif;
                             ?>
                         </div>
                     <?php 
