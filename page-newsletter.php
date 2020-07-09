@@ -44,15 +44,15 @@
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">Vorname </label>
+                        <label for="mce-FNAME">Vorname <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Nachname </label>
+                        <label for="mce-LNAME">Nachname <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-PHONE">Telefon </label>
+                        <label for="mce-PHONE">Telefon <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -86,15 +86,15 @@
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">Prénom </label>
+                        <label for="mce-FNAME">Prénom <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Nom </label>
+                        <label for="mce-LNAME">Nom <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-PHONE">Téléphone </label>
+                        <label for="mce-PHONE">Téléphone <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div id="mce-responses" class="clear">
@@ -128,19 +128,19 @@
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">Vorname </label>
+                        <label for="mce-FNAME">Vorname <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Nachname </label>
+                        <label for="mce-LNAME">Nachname <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-PHONE">Telefon </label>
+                        <label for="mce-PHONE">Telefon <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-TYPE">Bitte präzisieren: Anmeldung für Schule oder Veranstalter.in </label>
+                        <label for="mce-TYPE">Bemerkung: Bitte präzisieren: Anmeldung für Schule oder Veranstalter.in <span class="asterisk">*</span> </label>
                         <select name="TYPE" class="" id="mce-TYPE">
                             <option value=""></option>
                             <option value="Veranstalter">Veranstalter.in</option>
@@ -178,19 +178,19 @@
                         <input type="email" value="<?php echo $_POST['footer-newsletter-email']; ?>" name="EMAIL" class="required email" id="mce-EMAIL">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-FNAME">Prénom </label>
+                        <label for="mce-FNAME">Prénom <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-LNAME">Nom </label>
+                        <label for="mce-LNAME">Nom <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-PHONE">Téléphone </label>
+                        <label for="mce-PHONE">Téléphone <span class="asterisk">*</span> </label>
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-TYPE">veuillez svp préciser si vous êtes une école ou un.e organisateur.trice </label>
+                        <label for="mce-TYPE">Remarque: veuillez svp préciser si vous êtes une école ou un.e organisateur.trice <span class="asterisk">*</span> </label>
                         <select name="TYPE" class="" id="mce-TYPE">
                             <option value=""></option>
                             <option value="Veranstalter">organisateur.trice</option>
