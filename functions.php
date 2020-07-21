@@ -161,6 +161,10 @@
 
         while ( $events_raw->have_posts() ) {
             $events_raw->the_post();
+            
+            if(get_field('for_school')){
+                continue;
+            }
 
             $p = get_field('production');
             $v = get_field('venue');
