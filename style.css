@@ -433,6 +433,10 @@ figcaption {
     line-height: 64px;
     font-size: 2.5em;
 }
+.g-production__meta-cat {
+    font-size: 20px;
+    padding-top: 5px;
+}
 
 .g-programme__item-meta .g-production__meta-duration {
     position: absolute;

@@ -50,20 +50,25 @@
                     'posts_per_page' => -1,
                 );
 
-                if(get_field('filter_productions')){
+                if(get_field('filter_productions') == 'archiv'){
                     $query['meta_query'] = array(
                         array(
-                            'key'			=> 'event_category',
-                            'compare'		=> 'LIKE',
-                            'value'			=> get_field('filter_productions'),
+                            'key'			=> 'archive',
+                            'compare'		=> '=',
+                            'value'			=> '1',
                         ),
                     );
                 } else {
                     $query['meta_query'] = array(
                         array(
                             'key'			=> 'event_category',
-                            'compare'		=> 'NOT LIKE',
-                            'value'			=> 'archiv',
+                            'compare'		=> 'LIKE',
+                            'value'			=> get_field('filter_productions'),
+                        ),
+                        array(
+                            'key'			=> 'archive',
+                            'compare'		=> '!=',
+                            'value'			=> '1',
                         ),
                     );
                 }
@@ -94,10 +99,12 @@
                                     <?php the_post_thumbnail( 'event-preview', array( 'class'  => 'g-production__image' ) ); ?>
                                 </div>
                             <?php else: ?>
-
-                            <?php if ( get_field('age') ) : ?>
-                                <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
+                                <?php if ( get_field('age') ) : ?>
+                                    <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>
+                                <?php endif; ?>
                             <?php endif; ?>
+                            <?php if ( get_field('archive') ) : ?>
+                                <span class="g-production__meta-cat" aria-label="Category"><?php print_r(get_field('event_category')); ?></span>
                             <?php endif; ?>
                             <h2><?php the_title(); ?></h2>
                             <p class="g-production-preview__lead"><?php the_field('subtitle'); ?></p>
