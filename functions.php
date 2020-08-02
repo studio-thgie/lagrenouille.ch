@@ -259,10 +259,10 @@
 	 */
 	function pmg_ex_sort_posts($q)
 	{
-		if(is_page_template('page-homepage.php')){
+		/*if(is_page_template('page-homepage.php')){
             $q->set('orderby', 'menu_order');
             $q->set('order', 'ASC');
-        }
+        }*/
     }
 
     function filter_search($query) {

@@ -193,7 +193,7 @@
                         ?>
 
                         <?php if($reservation): ?>
-                            <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-programme__item-reservation">Reservation</a>
+                            <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-programme__item-reservation">Tickets</a>
                         <?php endif; ?>
 
                         <?php if(get_field('canceled')): ?>

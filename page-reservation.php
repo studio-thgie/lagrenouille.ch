@@ -2,7 +2,7 @@
 
     /*
 
-    Template Name: Reservation
+    Template Name: Tickets
     
     */
 

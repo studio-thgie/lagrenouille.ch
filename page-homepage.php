@@ -48,9 +48,18 @@
                 $query = array(
                     'post_type' => 'Productions',
                     'posts_per_page' => -1,
+                    'orderby'		 => 'menu_order',
+                    'order'			 => 'ASC'
                 );
 
                 if(get_field('filter_productions') == 'archiv'){
+                    $query = array(
+                        'post_type' => 'Productions',
+                        'posts_per_page' => -1,
+                        'meta_key'		 => 'event_category',
+                        'orderby'		 => 'meta_value',
+                        'order'			 => 'DESC'
+                    );
                     $query['meta_query'] = array(
                         array(
                             'key'			=> 'archive',
@@ -85,9 +94,29 @@
                 
                 $loop = new WP_Query( $query );
 
+                $current_cat = '';
+                $is_archive = get_field('filter_productions');
+
             ?>
 
                 <?php $count = 0; while ( $loop->have_posts() ) : $loop->the_post(); $count++; ?>
+
+                    <?php 
+
+                        if($is_archive == 'archiv'){
+                            if($current_cat != get_field('event_category')){
+                                ?>
+
+                                </section>
+                                <h2><?php echo get_field('event_category'); ?></h2>
+                                <section aria-label="Vorschau Produktionen und Unterseiten" class="g-production-preview__wrapper">
+
+                                <?php
+                                $current_cat = get_field('event_category');
+                            }
+                        }
+
+                    ?>
 
                     <article class="g-production-preview <?php echo ($count % 2 ? 'even' : 'odd');?>" data-effect="random-padding">
                         <a href="<?php the_permalink(); ?>" class="g-production-preview__article">
@@ -104,7 +133,7 @@
                                 <?php endif; ?>
                             <?php endif; ?>
                             <?php if ( get_field('archive') ) : ?>
-                                <span class="g-production__meta-cat" aria-label="Category"><?php print_r(get_field('event_category')); ?></span>
+                                <span class="g-production__meta-cat" aria-label="Category"><?php the_field('event_category'); ?></span>
                             <?php endif; ?>
                             <h2><?php the_title(); ?></h2>
                             <p class="g-production-preview__lead"><?php the_field('subtitle'); ?></p>
