@@ -30,7 +30,7 @@
             $field = get_field_object($field_key);
 
             if( $field ) {
-                echo '<select id="categories" name="categories" class="categories" autocomplete="off">';
+                echo '<div class="select-wrapper"><select id="categories" name="categories" class="categories" autocomplete="off">';
 
                 echo '<option value="all">';
                 _e( 'all', 'grenouille' );
@@ -55,7 +55,7 @@
                 _e( 'school', 'grenouille' );
                 echo '</option>';
 
-                echo '</select>';
+                echo '</select></div>';
             }
 
             $query = array(
@@ -66,13 +66,13 @@
             $loop = new WP_Query( $query );
 
             if( $loop->have_posts() ){
-                echo '<select id="saison" name="saison" class="saison" autocomplete="off">';
+                echo '<div class="select-wrapper"><select id="saison" name="saison" class="saison" autocomplete="off">';
                 echo '<option value="all">Saison</option>';
                 while ( $loop->have_posts() ) {
                     $loop->the_post();
                     echo '<option value="'.get_the_ID().'">'.get_the_title().'</option>';
                 }
-                echo '</select>';
+                echo '</select></div>';
             }
 
             wp_reset_query();
