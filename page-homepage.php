@@ -67,6 +67,27 @@
                             'value'			=> '1',
                         ),
                     );
+                } else if(strpos(get_field('filter_productions'), 'archiv_') !== false){
+                    $query = array(
+                        'post_type' => 'Productions',
+                        'posts_per_page' => -1,
+                        'meta_key'		 => 'event_category',
+                        'orderby'		 => 'meta_value',
+                        'order'			 => 'DESC'
+                    );
+                    $query['meta_query'] = array(
+                        array(
+                            'key'			=> 'archive',
+                            'compare'		=> '=',
+                            'value'			=> '1',
+                        ),
+                        array(
+                            'key'			=> 'event_category',
+                            'compare'		=> 'LIKE',
+                            'value'			=> explode('_', get_field('filter_productions'))[1],
+                        ),
+                        arr
+                    );
                 } else {
                     $query['meta_query'] = array(
                         array(
