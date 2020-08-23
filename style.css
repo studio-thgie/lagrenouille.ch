@@ -705,6 +705,17 @@ figcaption {
     transform: rotate(11deg);
 }
 
+.g-production__meta_lang--ded,
+.g-production__meta_lang--ev {
+    max-width: 120px;
+    transform: rotate(-12deg);
+    position: relative;
+    top: -10px;
+}
+.g-production__meta_lang--ev {
+    max-width: 85px;
+}
+
 .g-next-events__item a {
     text-decoration:  !important;
 }
@@ -1703,6 +1714,12 @@ button.g-button.g-button-foldable img {
     .g-production__meta_lang--de,
     .g-production__meta_lang--fr {
         width: 120px;
+    }
+    .g-production__meta_lang--ded,
+    .g-production__meta_lang--ev {
+        position: static;
+        top: 0;
+        transform: none;
     }
 
     .g-production-preview__list-item aside>*,
