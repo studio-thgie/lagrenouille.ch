@@ -57,6 +57,10 @@
                                     <?php if( in_array( 'ev', $lang ) !== false ): ?>
                                         <img class="g-production__meta_lang--ev" src="<?php echo get_theme_file_uri( 'assets/img/svg/EcouteVoir_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
                                     <?php endif; ?>
+
+                                    <?php if( in_array( 'nv', $lang ) !== false ): ?>
+                                        <img class="g-production__meta_lang--nv" src="<?php echo get_theme_file_uri( 'assets/img/svg/NonVerbal_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion NonVerbal"/>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             </div>
                             
@@ -147,7 +151,15 @@
             
                 <article class="g-production__article">
                     <div class="g-production__description g-one-col">
-                        <?php the_content(); ?>
+                        <?php if(get_field('ticketpark', $event->ID)): ?>
+                            <script type="text/javascript">
+                                    var _tp_language = "<?php echo ICL_LANGUAGE_CODE; ?>";
+                            </script>
+                            <script src="https://user.ticketpark.ch/embed/js/ticketing/show/<?php the_field('ticketpark', $event->ID); ?>" type="text/javascript"></script>
+
+                        <?php else: ?>
+                            <?php the_content(); ?>
+                        <?php endif; ?>
                     </div>
                 </article>
 

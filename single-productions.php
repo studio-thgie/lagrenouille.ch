@@ -48,6 +48,10 @@
                         <?php if( in_array( 'ev', $lang ) !== false ): ?>
                             <img class="g-production__meta_lang--ev" src="<?php echo get_theme_file_uri( 'assets/img/svg/EcouteVoir_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
                         <?php endif; ?>
+
+                        <?php if( in_array( 'nv', $lang ) !== false ): ?>
+                            <img class="g-production__meta_lang--nv" src="<?php echo get_theme_file_uri( 'assets/img/svg/NonVerbal_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion NonVerbal"/>
+                        <?php endif; ?>
                     <?php endif; ?>
                     <?php if ( get_field('age') ) : ?>
                         <span class="g-production__meta-age" aria-label="Minimum Alter"><?php the_field('age'); ?>+</span>

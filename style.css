@@ -706,13 +706,15 @@ figcaption {
 }
 
 .g-production__meta_lang--ded,
-.g-production__meta_lang--ev {
+.g-production__meta_lang--ev,
+.g-production__meta_lang--nv {
     max-width: 120px;
     transform: rotate(-12deg);
     position: relative;
     top: -10px;
 }
-.g-production__meta_lang--ev {
+.g-production__meta_lang--ev,
+.g-production__meta_lang--nv {
     max-width: 85px;
 }
 
@@ -1716,7 +1718,8 @@ button.g-button.g-button-foldable img {
         width: 120px;
     }
     .g-production__meta_lang--ded,
-    .g-production__meta_lang--ev {
+    .g-production__meta_lang--ev,
+    .g-production__meta_lang--nv {
         position: static;
         top: 0;
         transform: none;
