@@ -663,6 +663,7 @@ figcaption {
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 40px;
+    line-height: 35px;
 }
 
 .g-production__download {
@@ -703,6 +704,10 @@ figcaption {
     bottom: 11px;
     height: 50px;
     transform: rotate(11deg);
+}
+.g-next-events__item .g-production__meta_lang--nev {
+    height: 40px;
+    transform: rotate(0deg);
 }
 
 .g-production__meta_lang--ded,

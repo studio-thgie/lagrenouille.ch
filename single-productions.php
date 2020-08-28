@@ -151,6 +151,14 @@
                                         <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
                                     <?php endif; ?>
                                 <?php endif; ?>
+
+                                <?php if( in_array( 'ev', $lang ) !== false ): ?>
+                                    <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/EcouteVoir_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
+                                <?php endif; ?>
+
+                                <?php if( in_array( 'nv', $lang ) !== false ): ?>
+                                    <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/NonVerbal_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion NonVerbal"/>
+                                <?php endif; ?>
                                 
                             <?php endif; ?>
                         </div>
@@ -161,9 +169,9 @@
                         <?php 
 
                             if(ICL_LANGUAGE_CODE == 'fr') {
-                                $agenda = '/fr/calendrier';
+                                $agenda = '/fr/agenda';
                             } else {
-                                $agenda = '/spielplan';
+                                $agenda = '/agenda';
                             }
 
                         ?>
