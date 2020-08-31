@@ -170,72 +170,92 @@
             $v = get_field('venue');
             $date = strtotime(get_field('date_and_time'));
 
-            $event = [
-                'event_id' => get_the_ID(),
-                'event_title' => get_the_title( $p->ID ),
-                'event_subtitle' => get_field('subtitle', $p->ID),
-				'event_description' => get_the_content(null, false, $p->ID),
-                'event_duration' => get_field('duration', $p->ID),
-                'event_age' => get_field('age', $p->ID),
-                'event_dates' => [
-					[
-						'start_date' => date_i18n('Y-m-d H:i', $date)
-					]
-                ],
-                'event_categories' => ['TH'],
-                'event_status' => 'PUBLIC',
-                'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
-                'detail_url' => get_permalink( $p->ID ),
-                'venue_name' => get_the_title( $v->ID ),
-                'venue_address' => get_field('street', $v->ID ),
-                'venue_zip' => get_field('zip', $v->ID ),
-                'venue_city' => get_field('city', $v->ID )
-            ];
+            $event_exists = false;
+            $event_title = get_the_title( $p->ID );
 
-            if(get_field('override_language')) {
-                $lang = get_field('override_language');
-            } else {
-                $lang = get_field('language', $p->ID);
-            }
+            foreach($events as $key => $evt){
+                if($evt['event_title'] == $event_title){
+                    
+                    $events[$key]['event_dates'][] = [
+                        'start_date' => date_i18n('Y-m-d H:i', $date)
+                    ];
 
-            if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
-                $event['event_lang'] = 'fr/de';
-            } else {
-                if( in_array( 'de', $lang ) !== false) {
-                    $event['event_lang'] = 'de';
-                }
-                if( in_array( 'fr', $lang ) !== false) {
-                    $event['event_lang'] = 'fr';
+                    $event_exists = true;
+
+                    break;
                 }
             }
 
-            $p_d = icl_object_id($p->ID, 'productions', false, 'de');
+            if(!$event_exists){
 
-            $event['event_title_d'] = get_the_title( $p_d );
-            $event['event_subtitle_d'] = get_field('subtitle', $p_d);
-            $event['event_description_d'] = get_the_content(null, false, $p_d);
-            $event['detail_url_d'] = get_permalink( $p_d );
+                $event = [
+                    'event_school' => get_field('for_school'),
+                    'event_id' => get_the_ID(),
+                    'event_title' => get_the_title( $p->ID ),
+                    'event_subtitle' => get_field('subtitle', $p->ID),
+                    'event_description' => get_the_content(null, false, $p->ID),
+                    'event_duration' => get_field('duration', $p->ID),
+                    'event_age' => get_field('age', $p->ID),
+                    'event_dates' => [
+                        [
+                            'start_date' => date_i18n('Y-m-d H:i', $date)
+                        ]
+                    ],
+                    'event_categories' => ['TH'],
+                    'event_status' => 'PUBLIC',
+                    'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
+                    'detail_url' => get_permalink( $p->ID ),
+                    'venue_name' => get_the_title( $v->ID ),
+                    'venue_address' => get_field('street', $v->ID ),
+                    'venue_zip' => get_field('zip', $v->ID ),
+                    'venue_city' => get_field('city', $v->ID )
+                ];
 
-            $reservation = false;
-        
-            if(!is_null(get_field('reservation_activated'))){
-                $reservation = get_field('reservation_activated');
-            }
-
-            if($reservation) {
-                if(get_field('reservation_extern') != ''){
-                    $link_d = get_field('reservation_extern');
-                    $link_f = $link_d;
+                if(get_field('override_language')) {
+                    $lang = get_field('override_language');
                 } else {
-                    $link_d = 'https://lagrenouille.ch/de/reservation?id=' . get_the_ID();
-                    $link_f = 'https://lagrenouille.ch/fr/reservation?id=' . get_the_ID();
+                    $lang = get_field('language', $p->ID);
                 }
+
+                if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
+                    $event['event_lang'] = 'fr/de';
+                } else {
+                    if( in_array( 'de', $lang ) !== false) {
+                        $event['event_lang'] = 'de';
+                    }
+                    if( in_array( 'fr', $lang ) !== false) {
+                        $event['event_lang'] = 'fr';
+                    }
+                }
+
+                $p_d = icl_object_id($p->ID, 'productions', false, 'de');
+
+                $event['event_title_d'] = get_the_title( $p_d );
+                $event['event_subtitle_d'] = get_field('subtitle', $p_d);
+                $event['event_description_d'] = get_the_content(null, false, $p_d);
+                $event['detail_url_d'] = get_permalink( $p_d );
+
+                $reservation = false;
+            
+                if(!is_null(get_field('reservation_activated'))){
+                    $reservation = get_field('reservation_activated');
+                }
+
+                if($reservation) {
+                    if(get_field('reservation_extern') != ''){
+                        $link_d = get_field('reservation_extern');
+                        $link_f = $link_d;
+                    } else {
+                        $link_d = 'https://lagrenouille.ch/de/reservation?id=' . get_the_ID();
+                        $link_f = 'https://lagrenouille.ch/fr/reservation?id=' . get_the_ID();
+                    }
+                }
+
+                $event['booking_url_d'] = $link_d;
+                $event['booking_url_f'] = $link_f;
+
+                $events[] = $event;
             }
-
-            $event['booking_url_d'] = $link_d;
-            $event['booking_url_f'] = $link_f;
-
-            $events[] = $event;
         }
     
         $response = new WP_REST_Response(array(
