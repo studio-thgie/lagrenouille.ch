@@ -18,7 +18,7 @@
     </nav>
     <div class="g-logo-wrapper">
         <a href="<?php echo get_home_url(); ?>" aria-label="Zur Startseite" class="g-logo">
-            <span alt="Grenouille Logo" class="g-logo__image" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/GRE_LOGO_'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="false"></span>
+            <span alt="Grenouille Logo" class="g-logo__image" data-effect="animation" data-animation="<?php echo get_theme_file_uri( 'assets/img/animations/LaGrenouille-Covid-Logo-'.$GLOBALS['color_scheme'].'.json' ); ?>" data-loop="false"></span>
         </a>
         <?php if(!is_page_template('page-homepage.php') && get_post_type() != 'productions'): ?>
             <h1 class="g-link--large" data-effect="random-rotate"><?php the_title(); ?></h1>
