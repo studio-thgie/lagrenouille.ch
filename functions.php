@@ -102,25 +102,63 @@
             $v = get_field('venue');
             $date = strtotime(get_field('date_and_time'));
 
-            $events[] = [
-                'event_id' => get_the_ID(),
-                'event_title' => get_the_title( $p->ID ),
-                'subtitle' => get_field('subtitle', $p->ID),
-				'event_description' => get_the_content(null, false, $p->ID),
-                'event_dates' => [
-					[
-						'start_date' => date_i18n('Y-m-d H:i', $date)
-					]
-                ],
-                'event_categories' => ['TH'],
-                'event_status' => 'PUBLIC',
-                'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
-                'detail_url' => get_permalink( $p->ID ),
-                'venue_name' => get_the_title( $v->ID ),
-                'venue_address' => get_field('street', $v->ID ),
-                'venue_zip' => get_field('zip', $v->ID ),
-                'venue_city' => get_field('city', $v->ID )
-            ];
+            $event_exists = false;
+            $event_title = get_the_title( $p->ID );
+
+            if(get_field('override_language')) {
+                $lang = get_field('override_language');
+            } else {
+                $lang = get_field('language', $p->ID);
+            }
+
+            if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
+                $event_lang = 'fr/de';
+            } else {
+                if( in_array( 'de', $lang ) !== false) {
+                    $event_lang = 'de';
+                }
+                if( in_array( 'fr', $lang ) !== false) {
+                    $event_lang = 'fr';
+                }
+            }
+
+            foreach($events as $key => $evt){
+                if($evt['event_title'] == $event_title && $evt['event_lang'] == $event_lang){
+                    
+                    $events[$key]['event_dates'][] = [
+                        'start_date' => date_i18n('Y-m-d H:i', $date)
+                    ];
+
+                    $event_exists = true;
+
+                    break;
+                }
+            }
+
+            if(!$event_exists){
+
+                $events[] = [
+                    'event_id' => get_the_ID(),
+                    'event_title' => get_the_title( $p->ID ),
+                    'event_lang' => $event_lang,
+                    'subtitle' => get_field('subtitle', $p->ID),
+                    'event_description' => get_the_content(null, false, $p->ID),
+                    'event_dates' => [
+                        [
+                            'start_date' => date_i18n('Y-m-d H:i', $date)
+                        ]
+                    ],
+                    'event_categories' => ['TH'],
+                    'event_status' => 'PUBLIC',
+                    'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
+                    'detail_url' => get_permalink( $p->ID ),
+                    'venue_name' => get_the_title( $v->ID ),
+                    'venue_address' => get_field('street', $v->ID ),
+                    'venue_zip' => get_field('zip', $v->ID ),
+                    'venue_city' => get_field('city', $v->ID )
+                ];
+
+            }
         }
     
         $response = new WP_REST_Response(array(
@@ -170,11 +208,32 @@
             $v = get_field('venue');
             $date = strtotime(get_field('date_and_time'));
 
+            if($v->ID != 912 && $v->ID != 224){
+                continue;
+            }
+
             $event_exists = false;
             $event_title = get_the_title( $p->ID );
 
+            if(get_field('override_language')) {
+                $lang = get_field('override_language');
+            } else {
+                $lang = get_field('language', $p->ID);
+            }
+
+            if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
+                $event_lang = 'fr/de';
+            } else {
+                if( in_array( 'de', $lang ) !== false) {
+                    $event_lang = 'de';
+                }
+                if( in_array( 'fr', $lang ) !== false) {
+                    $event_lang = 'fr';
+                }
+            }
+
             foreach($events as $key => $evt){
-                if($evt['event_title'] == $event_title){
+                if($evt['event_title'] == $event_title && $evt['event_lang'] == $event_lang){
                     
                     $events[$key]['event_dates'][] = [
                         'start_date' => date_i18n('Y-m-d H:i', $date)
@@ -192,6 +251,7 @@
                     'event_school' => get_field('for_school'),
                     'event_id' => get_the_ID(),
                     'event_title' => get_the_title( $p->ID ),
+                    'event_lang' => $event_lang,
                     'event_subtitle' => get_field('subtitle', $p->ID),
                     'event_description' => get_the_content(null, false, $p->ID),
                     'event_duration' => get_field('duration', $p->ID),
@@ -205,28 +265,12 @@
                     'event_status' => 'PUBLIC',
                     'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
                     'detail_url' => get_permalink( $p->ID ),
+                    'venue_id' => $v->ID,
                     'venue_name' => get_the_title( $v->ID ),
                     'venue_address' => get_field('street', $v->ID ),
                     'venue_zip' => get_field('zip', $v->ID ),
                     'venue_city' => get_field('city', $v->ID )
                 ];
-
-                if(get_field('override_language')) {
-                    $lang = get_field('override_language');
-                } else {
-                    $lang = get_field('language', $p->ID);
-                }
-
-                if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false) {
-                    $event['event_lang'] = 'fr/de';
-                } else {
-                    if( in_array( 'de', $lang ) !== false) {
-                        $event['event_lang'] = 'de';
-                    }
-                    if( in_array( 'fr', $lang ) !== false) {
-                        $event['event_lang'] = 'fr';
-                    }
-                }
 
                 $p_d = icl_object_id($p->ID, 'productions', false, 'de');
 
