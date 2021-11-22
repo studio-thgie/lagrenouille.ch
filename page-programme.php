@@ -93,7 +93,7 @@
                 'order'				=> 'ASC',
                 'orderby'			=> 'meta_value',
                 'meta_key'			=> 'date_and_time',
-                'meta_type'			=> 'DATE'
+                'meta_type'			=> 'DATETIME'
             );
 
             if(isset($_GET['quand'])) {
@@ -126,7 +126,8 @@
 
                     if(isset($_GET['category'])){
                         if($_GET['category'] != 'school'){
-                            if(get_field('event_category', $p->ID) !== $_GET['category'] && $_GET['category'] != 'all'){
+                            $_cat = get_field_object('event_category', $p->ID);
+                            if($_cat['value']['value'] !== $_GET['category'] && $_GET['category'] != 'all'){
                                 continue;
                             }
                         }

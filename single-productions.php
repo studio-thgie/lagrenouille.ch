@@ -112,7 +112,7 @@
                             'order'				=> 'ASC',
                             'orderby'			=> 'meta_value',
                             'meta_key'			=> 'date_and_time',
-                            'meta_type'			=> 'DATE'
+                            'meta_type'			=> 'DATETIME'
                         ) );
 
                     ?>
