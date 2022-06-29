@@ -17,8 +17,8 @@ ready(function () {
                 })
                 break;
             case 'random-padding':
-                let padding = 1 + Math.random() * (window.innerWidth < 768 ? 1 : 8);
-                el.style.padding = padding + 'em';
+                //let padding = 1 + Math.random() * (window.innerWidth < 768 ? 1 : 8);
+                //el.style.padding = padding + 'em';
                 break;
             case 'parallax':
                 new simpleParallax(el, {
