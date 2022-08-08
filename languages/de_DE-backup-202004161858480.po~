@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Théâtre de la Grenouille\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-16 18:58+0000\n"
-"PO-Revision-Date: 2020-04-16 18:58+0000\n"
+"POT-Creation-Date: 2020-03-16 17:25+0000\n"
+"PO-Revision-Date: 2020-03-16 17:26+0000\n"
 "Last-Translator: admin <adrian@thgie.ch>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -106,7 +106,7 @@ msgstr "Schulvorstellung"
 msgid "Agenda"
 msgstr ""
 
-#: page-agenda.php:23 page-programme.php:30
+#: page-agenda.php:23 page-programme.php:24
 msgid "all"
 msgstr "Alle Kategorien"
 
@@ -114,19 +114,15 @@ msgstr "Alle Kategorien"
 msgid "Programme"
 msgstr ""
 
-#: page-programme.php:20
-msgid "filter"
-msgstr "Filter"
-
-#: page-programme.php:183
+#: page-programme.php:133
 msgid "canceled"
 msgstr "Abgesagt"
 
-#: page-programme.php:187
+#: page-programme.php:137
 msgid "postponed"
 msgstr "Verschoben"
 
-#: page-programme.php:191
+#: page-programme.php:141
 msgid "sold"
 msgstr "Ausverkauft"
 

@@ -140,7 +140,7 @@
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-TYPE">Bemerkung: Bitte präzisieren: Anmeldung für Schule oder Veranstalter.in <span class="asterisk">*</span> </label>
+                        <label for="mce-TYPE">Bitte präzisieren: Anmeldung für Schule oder Veranstalter.in <span class="asterisk">*</span> </label>
                         <select name="TYPE" class="" id="mce-TYPE">
                             <option value=""></option>
                             <option value="Veranstalter">Veranstalter.in</option>
@@ -190,7 +190,7 @@
                         <input type="text" value="" name="PHONE" class="required" id="mce-PHONE">
                     </div>
                     <div class="mc-field-group">
-                        <label for="mce-TYPE">Remarque: veuillez svp préciser si vous êtes une école ou un.e organisateur.trice <span class="asterisk">*</span> </label>
+                        <label for="mce-TYPE">veuillez svp préciser si vous êtes une école ou un.e organisateur.trice <span class="asterisk">*</span> </label>
                         <select name="TYPE" class="" id="mce-TYPE">
                             <option value=""></option>
                             <option value="Veranstalter">organisateur.trice</option>

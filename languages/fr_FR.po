@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Théâtre de la Grenouille\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-19 18:24+0000\n"
-"PO-Revision-Date: 2019-08-23 09:26+0000\n"
+"POT-Creation-Date: 2020-04-16 18:58+0000\n"
+"PO-Revision-Date: 2020-06-24 05:45+0000\n"
 "Last-Translator: admin <adrian@thgie.ch>\n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -12,56 +12,140 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.2.2"
+"X-Loco-Version: 2.3.1; wp-5.3.4"
 
-#. Author of the theme
-msgid "Adrian Demleitner"
+#. Name of the template
+msgid "Espace Pro Details"
 msgstr ""
 
 #. Name of the template
-msgid "Agenda"
-msgstr "Calendrier"
-
-#. Name of the template
-msgid "Default"
+msgid "Newsletter"
 msgstr ""
 
-#. Description of the theme
-msgid "Description"
-msgstr ""
+#: page-newsletter.php:24
+msgid "please_chose"
+msgstr "Veuillez sélectionner"
+
+#: page-newsletter.php:26
+msgid "interested"
+msgstr "Intéressé.e"
+
+#: page-newsletter.php:27
+msgid "organizer"
+msgstr "Organisateur.trice/Ecoles"
 
 #. Name of the template
 msgid "Homepage"
 msgstr ""
 
-#. Author URI of the theme
-msgid "http://thgie.ch"
+#: page-homepage.php:104 page-overview.php:43
+msgid "view"
 msgstr ""
 
-#. URI of the theme
-msgid "https://www.theatredelagrenouille.ch/"
+#. Name of the template
+msgid "Search"
+msgstr "Voir plus"
+
+#: page-search.php:29
+msgid "entries"
+msgstr "Résultats de la recherche pour:"
+
+#: page-search.php:31
+msgid "entry"
+msgstr "Résultat de la recherche pour:"
+
+#: page-search.php:44
+msgid "nothing_found"
+msgstr "Rien trouvé...."
+
+#: functions.php:19
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:20
+msgid "Footer"
 msgstr ""
 
 #. Name of the template
 msgid "Infos"
 msgstr ""
 
-#: functions.php:19
-msgid "Main Menu"
+#. Name of the template
+msgid "Espace Pro Overview"
 msgstr ""
 
 #. Name of the template
-msgid "Production"
-msgstr "Production"
+msgid "Team"
+msgstr ""
+
+#: single-productions.php:164
+msgid "next_events"
+msgstr "...plus de dates..."
+
+#. Name of the template
+msgid "Overview"
+msgstr ""
+
+#: nav.php:9
+msgid "search_action"
+msgstr "/fr/recherche"
+
+#: nav.php:11 nav.php:12
+msgid "search"
+msgstr "Rechercher"
+
+#. Name of the template
+msgid "Reservation"
+msgstr ""
+
+#: page-reservation.php:89 page-agenda.php:148
+msgid "school"
+msgstr "Scolaire"
+
+#. Name of the template
+msgid "Agenda"
+msgstr ""
+
+#: page-agenda.php:23 page-programme.php:30
+msgid "all"
+msgstr "Toutes les catégories"
+
+#. Name of the template
+msgid "Programme"
+msgstr ""
+
+#: page-programme.php:20
+msgid "filter"
+msgstr "Filtre"
+
+#: page-programme.php:183
+msgid "canceled"
+msgstr "Annulé"
+
+#: page-programme.php:187
+msgid "postponed"
+msgstr "Reporté"
+
+#: page-programme.php:191
+msgid "sold"
+msgstr "Complet"
 
 #. Name of the theme
 msgid "Théâtre de la Grenouille"
 msgstr ""
 
-#: page-homepage.php:43
-msgid "view"
-msgstr "Voir cette production"
+#. Description of the theme
+msgid "Description"
+msgstr ""
 
-#. search
-msgid "search"
-msgstr "Chercher"
+#. URI of the theme
+msgid "https://www.theatredelagrenouille.ch/"
+msgstr ""
+
+#. Author of the theme
+msgid "Adrian Demleitner"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://thgie.ch"
+msgstr ""

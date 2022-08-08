@@ -155,7 +155,7 @@
                             <script type="text/javascript">
                                     var _tp_language = "<?php echo ICL_LANGUAGE_CODE; ?>";
                             </script>
-                            <script src="https://user.ticketpark.ch/embed/js/ticketing/show/<?php the_field('ticketpark', $event->ID); ?>" type="text/javascript"></script>
+                            <script src="https://user.ticketpark.ch/embed/js/ticketing/event/<?php the_field('ticketpark', $event->ID); ?>" type="text/javascript"></script>
 
                         <?php else: ?>
                             <?php the_content(); ?>

@@ -102,6 +102,10 @@
             $v = get_field('venue');
             $date = strtotime(get_field('date_and_time'));
 
+            if($v->ID != 912 && $v->ID != 224){
+                continue;
+            }
+
             $event_exists = false;
             $event_title = get_the_title( $p->ID );
 
@@ -122,11 +126,23 @@
                 }
             }
 
+            $date_status = '';
+            if(get_field('sold')){
+                $date_status = 'SOLDOUT';
+            }
+            if(get_field('canceled')){
+                $date_status = 'CANCELED';
+            }
+            if(get_field('postponed')){
+                $date_status = 'RESCHEDULDED';
+            }
+
             foreach($events as $key => $evt){
                 if($evt['event_title'] == $event_title && $evt['event_lang'] == $event_lang){
                     
                     $events[$key]['event_dates'][] = [
-                        'start_date' => date_i18n('Y-m-d H:i', $date)
+                        'start_date' => date_i18n('Y-m-d H:i', $date),
+                        'date_status' => $date_status
                     ];
 
                     $event_exists = true;
@@ -145,11 +161,14 @@
                     'event_description' => get_the_content(null, false, $p->ID),
                     'event_dates' => [
                         [
-                            'start_date' => date_i18n('Y-m-d H:i', $date)
+                            'start_date' => date_i18n('Y-m-d H:i', $date),
+                            'date_status' => $date_status
                         ]
                     ],
                     'event_categories' => ['TH'],
                     'event_status' => 'PUBLIC',
+                    'event_canceled' => get_field('canceled'),
+                    'event_postponed' => get_field('postponed'),
                     'image_url' => get_the_post_thumbnail_url( $p->ID, 'event-header' ),
                     'detail_url' => get_permalink( $p->ID ),
                     'venue_name' => get_the_title( $v->ID ),
@@ -232,11 +251,23 @@
                 }
             }
 
+            $date_status = '';
+            if(get_field('sold')){
+                $date_status = 'SOLDOUT';
+            }
+            if(get_field('canceled')){
+                $date_status = 'CANCELED';
+            }
+            if(get_field('postponed')){
+                $date_status = 'RESCHEDULDED';
+            }
+
             foreach($events as $key => $evt){
                 if($evt['event_title'] == $event_title && $evt['event_lang'] == $event_lang){
                     
                     $events[$key]['event_dates'][] = [
-                        'start_date' => date_i18n('Y-m-d H:i', $date)
+                        'start_date' => date_i18n('Y-m-d H:i', $date),
+                        'date_status' => $date_status
                     ];
 
                     $event_exists = true;
@@ -258,7 +289,8 @@
                     'event_age' => get_field('age', $p->ID),
                     'event_dates' => [
                         [
-                            'start_date' => date_i18n('Y-m-d H:i', $date)
+                            'start_date' => date_i18n('Y-m-d H:i', $date),
+                            'date_status' => $date_status
                         ]
                     ],
                     'event_categories' => ['TH'],
