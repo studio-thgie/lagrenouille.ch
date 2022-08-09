@@ -55,6 +55,10 @@ a.g-link--cta,
 .g-production__meta-age {
     color: #ffffff !important;
 }
+.g-production__category {
+    background-color: #4F3244;
+    color: #fff;
+}
 
 .g-nav {
     background-color: #EA5060;

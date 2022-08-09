@@ -21,6 +21,10 @@ a,
 .g-production__meta-duration {
     color: #ffffff;
 }
+.g-production__category {
+    background-color: #DDDE41;
+    color: #fff;
+}
 .g-lang-change__item {
     background: #4F3244;
 }

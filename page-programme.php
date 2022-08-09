@@ -141,6 +141,11 @@
                 ?>
             
                 <article class="g-programme__item clear">
+                    <?php if(get_field('event_category', $p->ID)): ?>
+                    <div class="g-programme__category">
+                        <span><?php echo get_field('event_category', $p->ID)['label']; ?></span>
+                    </div>
+                    <?php endif; ?>
                     <div class="g-programme__item-date">
                         <div class="g-next-events__item">
                             <?php get_template_part( 'includes/show-date-mini' ); ?>
@@ -192,6 +197,11 @@
                             }
                         
                         ?>
+
+                        <?php if(get_field('new', $p->ID)): ?>
+                            <img src="<?php echo get_theme_file_uri( 'assets/img/svg/Neu_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Premiere" class="g-programme__item-new">
+                        <?php endif; ?>
+
 
                         <?php if($reservation): ?>
                             <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-programme__item-reservation">Tickets</a>
