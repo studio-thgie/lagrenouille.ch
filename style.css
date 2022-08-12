@@ -693,15 +693,38 @@ figcaption {
 }
 
 .g-production__next-events {
-    margin-bottom: 20px;
+    position: fixed;
+    right: 0;
+    top: 120px;
+    width: 230px;
+    background: #ea5060;
+    padding: 20px 0 20px 30px;
+    z-index: 50;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    font-size: 0.85rem;
+}
+.g-production__next-events.closed {
+    right: -200px;
+}
+.g-production__next-events .g-toggle {
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    cursor: pointer;
+    transform: rotate(-90deg) translate(50%, -4px) scale(0.7);
+}
+.g-production__next-events.closed .g-toggle {
+    transform: rotate(90deg) translate(-50%, 4px) scale(0.7);
+}
+.g-production__next-events.closed .g-toggle img {
+    cursor-events: none;
 }
 
 .g-next-events__item {
     position: relative;
-    width: 200px;
-    display: inline-block;
-
-    transform: rotate(-7deg);
+}
+.g-next-events__item p {
+    margin-right: 0 !important;
 }
 
 .g-next-events__item span {
@@ -714,15 +737,17 @@ figcaption {
 }
 
 .g-next-events__title {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 700;
+    color: #4F3244;
+    display: block;
 }
 
 .g-next-events__item .g-production__meta_lang {
     position: absolute;
-    left: 80px;
-    bottom: 11px;
-    height: 50px;
+    right: 10px;
+    top: 0;
+    height: 40px;
     transform: rotate(11deg);
 }
 .g-next-events__item .g-production__meta_lang--nev {
@@ -1567,7 +1592,7 @@ button.g-button.g-button-foldable img {
     display: none;
 }
 
-.g-production__meta-wrapper .g-production__meta-duration span {
+.g-production__meta-duration span {
     width: 90px;
 }
 
@@ -1864,10 +1889,6 @@ button.g-button.g-button-foldable img {
         font-size: 2em;
     }
 
-    .g-production__meta-duration span {
-        width: 90px;
-    }
-
     .g-production__meta-wrapper .g-production__meta_lang--de,
     .g-production__meta-wrapper .g-production__meta_lang--fr {
         width: 100px;
@@ -1959,10 +1980,6 @@ button.g-button.g-button-foldable img {
     .g-next-events__item {
         transform: rotate(0);
         width: 100%;
-    }
-
-    .g-next-events__item-date {
-        font-size: 1.5em;
     }
 
     .g-next-events__item-date p {

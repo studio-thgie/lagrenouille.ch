@@ -87,6 +87,10 @@
 
                 <div class="g-production__next-events">
 
+                    <button type="button" class="g-button">
+                        <img class="g-toggle" src="<?php echo get_theme_file_uri( 'assets/img/svg/toggle-arrow.svg' ); ?>" alt="Hide next event dates">
+                    </button>
+
                     <?php
             
                         global $sitepress;

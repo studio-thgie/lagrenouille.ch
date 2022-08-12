@@ -100,6 +100,9 @@ document.addEventListener('click', function (evt) {
         evt.target.querySelector('.g-button-foldable').classList.toggle('g-button-foldable--open');
         evt.target.parentNode.querySelector('.production__additional-block__content').classList.toggle('production__additional-block__content--open')
     }
+    if (evt.target.matches('.g-production__next-events .g-toggle')) {
+        document.querySelector('.g-production__next-events').classList.toggle('closed');
+    }
 
 }, false);
 
