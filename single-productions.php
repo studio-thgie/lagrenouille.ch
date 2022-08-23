@@ -94,9 +94,10 @@
                     <?php
             
                         global $sitepress;
+
                         $loop = new WP_Query( array(
                             'post_type' => 'Events',
-                            'posts_per_page' => 3,
+                            'posts_per_page' => 99,
                             'meta_query' 		=> array(
                                 array(
                                     'relation' => 'AND',
@@ -111,6 +112,11 @@
                                         'compare'		=> 'LIKE',
                                         'value'			=> get_the_ID(),
                                     ),
+                                    array(
+                                        'key'			=> 'for_school',
+                                        'compare'		=> '!=',
+                                        'value'			=> '1',
+                                    ),
                                 ),
                             ),
                             'order'				=> 'ASC',
@@ -118,6 +124,9 @@
                             'meta_key'			=> 'date_and_time',
                             'meta_type'			=> 'DATETIME'
                         ) );
+
+                        $loop_count = 0;
+                        $loop_total = $loop->found_posts;
 
                     ?>
 
@@ -128,9 +137,16 @@
                             $p = get_field('production');
                             $v = get_field('venue');
 
+                            if($loop_count <= 9):
+
+                                $loop_count++;
+
                         ?>
 
-                        <div class="g-next-events__item">
+
+                            <div class="g-next-events__item">
+
+                            <!-- <?php the_field('for_school'); ?> -->
 
                             <?php if ( get_field('language', $p->ID) ) : ?>
 
@@ -167,9 +183,11 @@
 
                             <?php get_template_part( 'includes/show-date-mini' ); ?>
                         </div>
-                    <?php endwhile; wp_reset_query(); ?>
 
-                    <?php if($loop->have_posts()): ?>
+
+                    <?php endif; endwhile; wp_reset_query(); ?>
+
+                    <?php if($loop_count < $loop_total): ?>
 
                         <?php 
 

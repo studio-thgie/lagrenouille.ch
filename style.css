@@ -1352,8 +1352,8 @@ input[type="email"] {
 
 /* typo only */
 h1, h2, h3, h4, h5, h6 {
-    hyphens: auto;
-    word-wrap: anywhere;
+    /* hyphens: auto;
+    word-wrap: anywhere; */
 }
 
 h1,

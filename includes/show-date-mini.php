@@ -28,7 +28,7 @@
 
     <span class="g-next-events__item-time">
 
-        <span><?php echo date_i18n('l', $date); ?></span>
+        <!-- <span><?php echo date_i18n('l', $date); ?></span> -->
 
         <?php if(get_field('time_start')): ?>
         
@@ -62,5 +62,25 @@
 
     </span>
 
-        <?php the_field('city', $v->ID ); ?> 
+    <?php
+					
+        $reservation = true;
+        $link = '/' . ICL_LANGUAGE_CODE . '/reservation?id=' . get_the_ID();
+        $target = '_self';
+    
+        if(!is_null(get_field('reservation_activated'))){
+            $reservation = get_field('reservation_activated');
+        }
+    
+        if(get_field('reservation_extern') != ''){
+            $link = get_field('reservation_extern');
+            $target = '_blank';
+        }
+    
+    ?>
+
+    <?php if($reservation): ?>
+        <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" style="color: #DDDE41;">Tickets</a>
+    <?php endif; ?>
+
 </p>

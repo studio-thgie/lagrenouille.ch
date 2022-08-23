@@ -28,6 +28,18 @@
 
     gtag('config', 'UA-161843300-1');
     </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= get_template_directory_uri(); ?>/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= get_template_directory_uri(); ?>/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= get_template_directory_uri(); ?>/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="<?= get_template_directory_uri(); ?>/assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="<?= get_template_directory_uri(); ?>/assets/favicons/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-config" content="<?= get_template_directory_uri(); ?>/assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
 </head>
 
 <body>
