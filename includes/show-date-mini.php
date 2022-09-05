@@ -80,7 +80,19 @@
     ?>
 
     <?php if($reservation): ?>
-        <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" style="color: #DDDE41;">Tickets</a>
+        <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-programme__item-reservation">Tickets</a>
+    <?php endif; ?>
+
+    <?php if(get_field('canceled')): ?>
+        <a class="g-programme__item-reservation"><?php _e('canceled', 'grenouille') ?></a>
+    <?php endif; ?>
+
+    <?php if(get_field('postponed')): ?>
+        <a class="g-programme__item-reservation"><?php _e('postponed', 'grenouille') ?></a>
+    <?php endif; ?>
+
+    <?php if(get_field('sold')): ?>
+        <span class="g-programme__item-reservation"><?php _e('sold', 'grenouille') ?></span>
     <?php endif; ?>
 
 </p>

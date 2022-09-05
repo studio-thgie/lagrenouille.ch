@@ -140,6 +140,9 @@
                     ?>
 
                     <article class="g-production-preview <?php echo ($count % 2 ? 'even' : 'odd');?>" data-effect="random-padding">
+                        <?php if(get_field('new', $p->ID)): ?>
+                            <img class="g-production__new" src="<?php echo get_theme_file_uri( 'assets/img/svg/Neu_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Premiere" class="g-programme__item-new">
+                        <?php endif; ?>
                         <a href="<?php the_permalink(); ?>" class="g-production-preview__article">
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <div class="g-production-preview__image">

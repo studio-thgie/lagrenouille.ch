@@ -137,7 +137,7 @@
                             $p = get_field('production');
                             $v = get_field('venue');
 
-                            if($loop_count <= 9):
+                            if($loop_count <= 6):
 
                                 $loop_count++;
 
@@ -169,13 +169,13 @@
                                 <?php endif; ?>
 
                                 <?php if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false): ?>
-                                    <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
+                                    <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_R.svg' ); ?>" alt="Produktion bilingues"/>
                                     <?php else: ?>
                                     <?php if( in_array( 'de', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Deutsch"/>
+                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_R.svg' ); ?>" alt="Produktion in Deutsch"/>
                                     <?php endif; ?>
                                     <?php if( in_array( 'fr', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion in Französisch"/>
+                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_R.svg' ); ?>" alt="Produktion in Französisch"/>
                                     <?php endif; ?>
                                 <?php endif; ?>
                                 

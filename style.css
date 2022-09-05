@@ -421,12 +421,11 @@ figcaption {
 
 .g-programme__item-reservation,
 .g-programme__item-sold {
-    position: absolute;
-    bottom: 20px;
-    right: 150px;
-    font-size: 2em;
+    font-size: 1.2em;
     padding: 2px 8px;
-    transform: rotate(12deg);
+    transform: rotate(-7deg);
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .g-programme__item-reservation {
@@ -507,12 +506,21 @@ figcaption {
 }
 
 .g-production-preview {
+    position: relative;
     width: 50%;
     padding: 2em;
 }
 
 .g-production-preview.even {
     text-align: right;
+}
+
+.g-production__new {
+    position: absolute;
+    right: 40px;
+    top: -40px;
+    width: 180px;
+    z-index: 100;
 }
 
 .g-production-preview__image {
@@ -1960,6 +1968,13 @@ button.g-button.g-button-foldable img {
 }
 
 @media (max-width: 560px) {
+
+    .g-logo {
+        margin: 3rem auto 3.875rem;
+    }
+    .g-logo span {
+        width: 180px;
+    }
 
     .g-wrapper>header,
     .g-wrapper>main {

@@ -202,23 +202,6 @@
                             <img src="<?php echo get_theme_file_uri( 'assets/img/svg/Neu_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Premiere" class="g-programme__item-new">
                         <?php endif; ?>
 
-
-                        <?php if($reservation): ?>
-                            <a href="<?php echo $link; ?>" target="<?php echo $target; ?>" class="g-programme__item-reservation">Tickets</a>
-                        <?php endif; ?>
-
-                        <?php if(get_field('canceled')): ?>
-                            <a class="g-programme__item-reservation"><?php _e('canceled', 'grenouille') ?></a>
-                        <?php endif; ?>
-
-                        <?php if(get_field('postponed')): ?>
-                            <a class="g-programme__item-reservation"><?php _e('postponed', 'grenouille') ?></a>
-                        <?php endif; ?>
-
-                        <?php if(get_field('sold')): ?>
-                            <span class="g-programme__item-sold"><?php _e('sold', 'grenouille') ?></span>
-                        <?php endif; ?>
-
                         <?php if(get_field('brunch')): ?>
                             <img class="g-programm_item-brunch" src="<?php echo get_theme_file_uri( 'assets/img/svg/Brunch_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Brunch"/>
                         <?php endif; ?>
