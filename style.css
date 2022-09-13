@@ -1604,6 +1604,13 @@ button.g-button.g-button-foldable img {
     width: 90px;
 }
 
+.two-columns {
+    column-count: 2;
+}
+.g-production__article .two-columns p {
+    margin-right: 20px;
+}
+
 /* responsive */
 @media (max-width: 960px) {
     #searchform {
@@ -1964,6 +1971,10 @@ button.g-button.g-button-foldable img {
     .g-production__meta-wrapper .g-production__meta-age {
         -webkit-transform: translateY(-15px) translateX(10px) rotate(12deg);
         transform: translateY(-15px) translateX(10px) rotate(12deg);
+    }
+
+    .two-columns {
+        column-count: 1;
     }
 }
 

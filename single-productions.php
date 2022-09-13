@@ -248,7 +248,7 @@
                                 </button>
                             <?php endif; ?>
                         </h3>
-                        <div class="production__additional-block__content <?php if(get_sub_field('foldable')): ?>production__additional-block__content--folded<?php endif; ?>">
+                        <div class="production__additional-block__content <?php if(get_sub_field('foldable')): ?>production__additional-block__content--folded<?php endif; ?> <?php if(get_sub_field('two_columns')): ?>two-columns<?php endif; ?>">
                             <?php the_sub_field('content'); ?>
                         </div>
                     </div>

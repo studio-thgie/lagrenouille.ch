@@ -49,11 +49,11 @@
                             <?php the_sub_field('title'); ?>
                             <?php if(get_sub_field('foldable')): ?>
                                 <button type="button" class="g-button g-button-foldable">
-                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/foldable-arrow.svg' ); ?>" alt="Fold block">
+                                    <img src="<?php echo get_theme_file_uri( 'assets/img/svg/foldable-arrow_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Fold block">
                                 </button>
                             <?php endif; ?>
                         </h3>
-                        <div class="production__additional-block__content <?php if(get_sub_field('foldable')): ?>production__additional-block__content--folded<?php endif; ?>">
+                        <div class="production__additional-block__content <?php if(get_sub_field('foldable')): ?>production__additional-block__content--folded<?php endif; ?> <?php if(get_sub_field('two_columns')): ?>two-columns<?php endif; ?>">
                             <?php the_sub_field('content'); ?>
                         </div>
                     </div>

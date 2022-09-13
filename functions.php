@@ -310,6 +310,7 @@
                 $event['event_subtitle_d'] = get_field('subtitle', $p_d);
                 $event['event_description_d'] = get_the_content(null, false, $p_d);
                 $event['detail_url_d'] = get_permalink( $p_d );
+                $event['image_url_d'] = get_the_post_thumbnail_url( $p_d, 'event-header' );
 
                 $reservation = false;
             
