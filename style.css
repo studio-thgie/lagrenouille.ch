@@ -432,6 +432,9 @@ figcaption {
     background: #fff;
     color: #ea5060;
 }
+.g-next-events__item span.g-programme__item-reservation {
+    display: inline-block;
+}
 
 .g-programme__item-sold {
     background: #ea5060;
@@ -455,18 +458,15 @@ figcaption {
 .g-programme__item-meta {
     position: relative;
     width: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .g-programme__item-meta .g-production__meta_lang {
-    position: absolute;
-    top: 30px;
-    left: 90px;
     height: 80px;
 }
 
 .g-programme__item-meta .g-production__meta-age {
-    position: relative;
-    left: 20px;
     width: 64px;
     height: 64px;
     line-height: 64px;
@@ -478,9 +478,7 @@ figcaption {
 }
 
 .g-programme__item-meta .g-production__meta-duration {
-    position: absolute;
-    left: -20px;
-    top: 80px;
+    position: static;
 }
 .g-programme__item-meta .g-production__meta-duration span {
     width: 70px;
@@ -731,12 +729,26 @@ figcaption {
 .g-next-events__item {
     position: relative;
 }
+.g-next-events__item + .g-next-events__item {
+    margin-top: 20px;
+}
 .g-next-events__item p {
     margin-right: 0 !important;
 }
 
 .g-next-events__item span {
     display: block;
+}
+
+.g-production__meta__mini-icons {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+}
+.g-production__meta__mini-icons > * {
+    position: static !important;
 }
 
 .g-next-events__item-date {
@@ -930,6 +942,9 @@ figcaption {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     z-index: 10;
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
 }
 
 .g-production__meta-age {
@@ -972,6 +987,8 @@ figcaption {
 }
 
 .g-production__meta-duration {
+    display: flex;
+    align-items: center;
     font-size: 2em;
     text-align: center;
     position: relative;
@@ -981,8 +998,6 @@ figcaption {
 
 .g-production__meta-duration span {
     display: inline-block;
-    -webkit-transform: translate(15%, 28%);
-    transform: translate(15%, 28%);
     width: 50px;
 }
 
@@ -1776,6 +1791,7 @@ button.g-button.g-button-foldable img {
         transform: none;
         width: 100%;
         padding-right: 10px;
+        justify-content: start;
     }
 
     .g-production__download {

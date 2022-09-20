@@ -160,24 +160,26 @@
 
                                 ?>
 
-                                <?php if( in_array( 'ev', $lang ) !== false ): ?>
-                                    <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/EcouteVoir_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
-                                <?php endif; ?>
-
-                                <?php if( in_array( 'nv', $lang ) !== false ): ?>
-                                    <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/NonVerbal_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion NonVerbal"/>
-                                <?php endif; ?>
-
-                                <?php if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false): ?>
-                                    <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_R.svg' ); ?>" alt="Produktion bilingues"/>
-                                    <?php else: ?>
-                                    <?php if( in_array( 'de', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_R.svg' ); ?>" alt="Produktion in Deutsch"/>
+                                <div class="g-production__meta__mini-icons">
+                                    <?php if( in_array( 'ev', $lang ) !== false ): ?>
+                                        <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/EcouteVoir_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion bilingues"/>
                                     <?php endif; ?>
-                                    <?php if( in_array( 'fr', $lang ) !== false) : ?>
-                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_R.svg' ); ?>" alt="Produktion in Französisch"/>
+
+                                    <?php if( in_array( 'nv', $lang ) !== false ): ?>
+                                        <img class="g-production__meta_lang g-production__meta_lang--nev" src="<?php echo get_theme_file_uri( 'assets/img/svg/NonVerbal_'.$GLOBALS['color_scheme'].'.svg' ); ?>" alt="Produktion NonVerbal"/>
                                     <?php endif; ?>
-                                <?php endif; ?>
+
+                                    <?php if( in_array( 'de', $lang ) !== false && in_array( 'fr', $lang ) !== false): ?>
+                                        <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DEFR_R.svg' ); ?>" alt="Produktion bilingues"/>
+                                        <?php else: ?>
+                                        <?php if( in_array( 'de', $lang ) !== false) : ?>
+                                            <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/DE_R.svg' ); ?>" alt="Produktion in Deutsch"/>
+                                        <?php endif; ?>
+                                        <?php if( in_array( 'fr', $lang ) !== false) : ?>
+                                            <img class="g-production__meta_lang" src="<?php echo get_theme_file_uri( 'assets/img/svg/FR_R.svg' ); ?>" alt="Produktion in Französisch"/>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
                                 
                             <?php endif; ?>
 
