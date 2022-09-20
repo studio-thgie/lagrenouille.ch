@@ -229,7 +229,7 @@
 
                 
 
-                <div class="g-production__description">
+                <div class="g-production__description <?php if(get_field('two_columns')): ?>two-columns<?php endif; ?>">
                     <?php the_content(); ?>
                 </div>
                 <div class="g-production__information">
